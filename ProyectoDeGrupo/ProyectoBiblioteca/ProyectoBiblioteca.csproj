@@ -67,6 +67,12 @@
     <Compile Include="Vista\FormularioAgregarUsuario.Designer.cs">
       <DependentUpon>FormularioAgregarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\formularioEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\formularioEditarUsuario.Designer.cs">
+      <DependentUpon>formularioEditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormularioInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormularioAgregarUsuario.resx">
       <DependentUpon>FormularioAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\formularioEditarUsuario.resx">
+      <DependentUpon>formularioEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormularioInicio.resx">
       <DependentUpon>FormularioInicio.cs</DependentUpon>

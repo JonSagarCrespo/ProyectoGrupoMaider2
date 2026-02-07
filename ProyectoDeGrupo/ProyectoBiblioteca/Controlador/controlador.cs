@@ -3,6 +3,7 @@ using ProyectoBiblioteca.Modelo.Libro;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProyectoBiblioteca.Controlador
@@ -18,7 +19,7 @@ namespace ProyectoBiblioteca.Controlador
 
 
 
-        public void InsertarUsuario(string nombre, string Apellido1, string Apellido2, int telefono)
+        public void InsertarUsuario(/*int ? id, */string nombre, string Apellido1, string Apellido2, int telefono)
         {
             string errores = "";
 
@@ -35,7 +36,15 @@ namespace ProyectoBiblioteca.Controlador
 
             if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
                 throw new Exception(errores);
-            listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
+
+            //if (id == null || id == 0) 
+            //{
+                listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
+            //}
+            //else
+            //{
+            //    listaUsuarios.EditarUsuario(nombre, Apellido1, Apellido2, telefono);
+            //}
         }
 
 
@@ -52,16 +61,30 @@ namespace ProyectoBiblioteca.Controlador
                return listaUsuarios.filtrarUsuarios(texto, 0);
 
         }
-        public List<Usuario> MostrarUsuarios()
-        {
-            List<Usuario> usuarios = listaUsuarios.obtenerUsuarios();
-            if (usuarios.Count == 0)
-                throw new Exception("La lista de usuarios está vacía");
-            else
+  
 
-                return usuarios;
+         public List<string> Prueba(int id)
+
+        {
+            
+            List<Usuario> usuarios;
+
+           
+                usuarios = listaUsuarios.SacarUsuarioConID(id); 
+           
+            
+            if (usuarios.Count == 0)
+                throw new Exception("No se encontraron usuarios con esos criterios");
+
+            List<string> resultado = new List<string>();
+
+            foreach (Usuario u in usuarios)
+
+                resultado.Add($"{u.Id} - {u.Nombre} {u.Apellido1} {u.Apellido2} ({u.Telefono})");
+            return resultado;
 
         }
+
 
         public bool eleminarUsuario(int id)
         {
@@ -69,6 +92,8 @@ namespace ProyectoBiblioteca.Controlador
 
             return true;
         }
+
+
 
         public DataTable CargarDatosUsuario()
         {

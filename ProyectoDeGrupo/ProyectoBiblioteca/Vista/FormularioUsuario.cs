@@ -2,6 +2,7 @@
 using ProyectoBiblioteca.Vista;
 using System;
 using System.Data;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace ProyectoBiblioteca
@@ -105,7 +106,7 @@ namespace ProyectoBiblioteca
             foreach (DataRow row in datos.Rows)
             {
                 ControlUsuarioProyecto.ControlUsuario control = new ControlUsuarioProyecto.ControlUsuario();
-                control.tipo = ControlUsuarioProyecto.ControlUsuario.TipoEntidad.Libro; //importante hay que elegir el tipo de entidad.
+                control.tipo = ControlUsuarioProyecto.ControlUsuario.TipoEntidad.Usuario; //importante hay que elegir el tipo de entidad.
                 control.Id = (int)row.Field<long>("id");
                 control.Nombre = row.Field<string>("Nombre");
                 control.Apellido = row.Field<string>("Apellido_1");
@@ -122,14 +123,47 @@ namespace ProyectoBiblioteca
 
         private void Control_Eliminar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
+            
+
+            int sacarID = e.Id;
+            var filtrado = controladorUsuario.Prueba(sacarID);
+
+
+            foreach (string usuario in filtrado)
+            {
+                MessageBox.Show(usuario);
+            }
+
             controladorUsuario.eleminarUsuario(e.Id);
+
             Cargar(controladorUsuario.CargarDatosUsuario());
-            MessageBox.Show("Usuario eliminado correctamente");
+            MessageBox.Show($"Usuario eliminado correctamente: {e.Id}");
         }
 
         private void Control_Agregar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
-           
+            int sacarID = e.Id;
+            var filtrado = controladorUsuario.Prueba(sacarID);
+
+
+            foreach (string usuario in filtrado)
+            {
+                MessageBox.Show(usuario);
+            }
+
+            formularioEditarUsuario form = new formularioEditarUsuario();
+            form.formularioEditarUsu = this.controladorUsuario;
+
+            
+
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void panelUsuarios_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -159,6 +159,7 @@
             this.panelUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelUsuarios.Size = new System.Drawing.Size(594, 250);
             this.panelUsuarios.TabIndex = 2;
+            this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsuarios_Paint);
             // 
             // FormularioUsuario
             // 

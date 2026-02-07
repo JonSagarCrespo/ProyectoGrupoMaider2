@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Windows.Forms;
 using ProyectoBiblioteca.Controlador; 
 
 namespace ProyectoBiblioteca.Modelo
@@ -46,13 +47,43 @@ namespace ProyectoBiblioteca.Modelo
            
         }
 
+
+        public List<Usuario> SacarUsuarioConID(int id)
+        {
+            List<Usuario> resultado = new List<Usuario>();
+            SQLiteCommand cmd;
+            {
+                
+                    string sql = @"SELECT ID, Nombre, Apellido_1, Apellido_2, Telefono FROM Usuarios WHERE ID = @id";
+                    cmd = new SQLiteCommand(sql);
+                    cmd.Parameters.AddWithValue("@id", id);
+               
+
+                using (SQLiteDataReader dr = Conexion.GetDataReader(ruta, cmd))
+                {
+                    while (dr.Read())
+                    {
+                        resultado.Add(new Usuario(
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            dr.GetString(2),
+                            dr.GetString(3),
+                            dr.GetInt32(4)
+                        ));
+                    }
+                }
+            }
+            return resultado;
+        }
+
+
         public List<Usuario> obtenerUsuarios()
         {
             List<Usuario> lista2 = new List<Usuario>();
 
             SQLiteCommand cmd;
 
-            string sql = "SELECT ID,Nombre,Apellido_1,Apellido_2,Telefono FROM Usuarios";
+            string sql = @"SELECT ID,Nombre,Apellido_1,Apellido_2,Telefono FROM Usuarios where ID=@id";
             cmd = new SQLiteCommand(sql);
 
             using (SQLiteDataReader dr = Conexion.GetDataReader(sql, cmd))
@@ -90,6 +121,25 @@ namespace ProyectoBiblioteca.Modelo
             datos = Conexion.GetDataTable(Properties.Settings.Default.conexion, cmd);
             return datos;
         }
+
+
+        public void EditarUsuario(string nombre, string Apellido1, string Apellido2, int telefono)
+        {
+            string sql = "UPDATE Usuarios SET Nombre=@nom, Apellido_1=@ape1, Apellido_2=@ape2, Telefono=@tel WHERE Id=@id";
+            SQLiteCommand cmd = new SQLiteCommand(sql);
+
+            cmd.Parameters.Add("@nom", DbType.String).Value = nombre;
+            cmd.Parameters.Add("@ape1", DbType.String).Value = Apellido1;
+            cmd.Parameters.Add("@ape2", DbType.String).Value = Apellido2;
+            cmd.Parameters.Add("@telefono", DbType.Int32).Value = telefono;
+
+            Conexion.Ejecuta(ruta, cmd);
+            
+
+        }
+
+
+
 
     }
 }
