@@ -123,15 +123,16 @@ namespace ProyectoBiblioteca.Modelo
         }
 
 
-        public void EditarUsuario(string nombre, string Apellido1, string Apellido2, int telefono)
+        public void EditarUsuario(int id, string nombre, string Apellido1, string Apellido2, int telefono)
         {
             string sql = "UPDATE Usuarios SET Nombre=@nom, Apellido_1=@ape1, Apellido_2=@ape2, Telefono=@tel WHERE Id=@id";
             SQLiteCommand cmd = new SQLiteCommand(sql);
 
+            cmd.Parameters.Add("@id", DbType.Int32).Value = id;
             cmd.Parameters.Add("@nom", DbType.String).Value = nombre;
             cmd.Parameters.Add("@ape1", DbType.String).Value = Apellido1;
             cmd.Parameters.Add("@ape2", DbType.String).Value = Apellido2;
-            cmd.Parameters.Add("@telefono", DbType.Int32).Value = telefono;
+            cmd.Parameters.Add("@tel", DbType.Int32).Value = telefono;
 
             Conexion.Ejecuta(ruta, cmd);
             

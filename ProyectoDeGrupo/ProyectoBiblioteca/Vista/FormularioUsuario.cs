@@ -129,15 +129,15 @@ namespace ProyectoBiblioteca
             var filtrado = controladorUsuario.Prueba(sacarID);
 
 
-            foreach (string usuario in filtrado)
+            foreach (var usuario in filtrado)
             {
-                MessageBox.Show(usuario);
+                MessageBox.Show($"Se eleminara: " + usuario.ToString());
             }
 
             controladorUsuario.eleminarUsuario(e.Id);
 
             Cargar(controladorUsuario.CargarDatosUsuario());
-            MessageBox.Show($"Usuario eliminado correctamente: {e.Id}");
+            MessageBox.Show($"Usuario eliminado correctamente");
         }
 
         private void Control_Agregar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
@@ -145,16 +145,21 @@ namespace ProyectoBiblioteca
             int sacarID = e.Id;
             var filtrado = controladorUsuario.Prueba(sacarID);
 
-
-            foreach (string usuario in filtrado)
+            formularioEditarUsuario form = new formularioEditarUsuario();
+            foreach (var usuario in filtrado)
             {
-                MessageBox.Show(usuario);
+                MessageBox.Show(usuario.Id.ToString());
+                form.lEid.Text = usuario.Id.ToString();
+                form.tbNombre.Text = usuario.Nombre.ToString();
+                form.tbApe1.Text = usuario.Apellido1.ToString();
+                form.tbApe2.Text = usuario.Apellido2.ToString();
+                form.tbTelefono.Text = usuario.Telefono.ToString();
+                
+                
             }
 
-            formularioEditarUsuario form = new formularioEditarUsuario();
-            form.formularioEditarUsu = this.controladorUsuario;
-
-            
+            //form.formularioEditarUsu = this.controladorUsuario;
+              
 
             this.Hide();
             form.ShowDialog();

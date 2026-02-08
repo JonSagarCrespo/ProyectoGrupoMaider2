@@ -48,6 +48,31 @@ namespace ProyectoBiblioteca.Controlador
         }
 
 
+        public void EditarUsuario(int  id, string nombre, string Apellido1, string Apellido2, int telefono)
+        {
+            string errores = "";
+
+            if (nombre.Trim().Length == 0)
+                errores += "Falta el nombre" + Environment.NewLine;
+
+            if (Apellido1.Trim().Length == 0)
+                errores += "Falta el primer apellido" + Environment.NewLine;
+
+            if (telefono <= 9)
+
+                errores += "falta numero de telefono " + Environment.NewLine;
+
+
+            if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
+                throw new Exception(errores);
+
+            
+            listaUsuarios.EditarUsuario(id,nombre, Apellido1, Apellido2, telefono);
+           
+        }
+
+
+
         public DataTable FiltrarUsuarios(string texto)
 
         {
@@ -63,7 +88,7 @@ namespace ProyectoBiblioteca.Controlador
         }
   
 
-         public List<string> Prueba(int id)
+         public List<Usuario> Prueba(int id)
 
         {
             
@@ -81,7 +106,8 @@ namespace ProyectoBiblioteca.Controlador
             foreach (Usuario u in usuarios)
 
                 resultado.Add($"{u.Id} - {u.Nombre} {u.Apellido1} {u.Apellido2} ({u.Telefono})");
-            return resultado;
+
+            return usuarios; 
 
         }
 

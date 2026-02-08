@@ -41,8 +41,12 @@
             this.btEditar = new System.Windows.Forms.Button();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lEid = new System.Windows.Forms.Label();
             this.tlpPrincipal.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpPrincipal
@@ -78,6 +82,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btEditar, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.btLimpiar, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btCancelar, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 13);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
@@ -234,6 +239,50 @@
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click_1);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lEid, 1, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(17, 16);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(180, 100);
+            this.tableLayoutPanel2.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(2, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ID:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lEid
+            // 
+            this.lEid.AutoSize = true;
+            this.lEid.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lEid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lEid.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEid.Location = new System.Drawing.Point(34, 40);
+            this.lEid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lEid.Name = "lEid";
+            this.lEid.Size = new System.Drawing.Size(144, 20);
+            this.lEid.TabIndex = 3;
+            this.lEid.Text = "---";
+            this.lEid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // formularioEditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +295,8 @@
             this.tlpPrincipal.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -254,16 +305,19 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpPrincipal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox tbApe1;
         private System.Windows.Forms.Label lNombre;
         private System.Windows.Forms.Label lApe1;
         private System.Windows.Forms.Label lApe2;
         private System.Windows.Forms.Label lTelefono;
-        private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbApe2;
-        private System.Windows.Forms.TextBox tbTelefono;
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btLimpiar;
         private System.Windows.Forms.Button btCancelar;
+        public System.Windows.Forms.TextBox tbApe1;
+        public System.Windows.Forms.TextBox tbNombre;
+        public System.Windows.Forms.TextBox tbApe2;
+        public System.Windows.Forms.TextBox tbTelefono;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lEid;
     }
 }
