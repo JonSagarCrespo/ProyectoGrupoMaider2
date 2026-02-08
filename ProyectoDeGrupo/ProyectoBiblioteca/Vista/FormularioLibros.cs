@@ -30,8 +30,13 @@ namespace ProyectoBiblioteca
         public void Cargar(DataTable datos)
         {
             tableLayoutPanelLibros.Controls.Clear();
+            tableLayoutPanelLibros.RowStyles.Clear();
+            tableLayoutPanelLibros.RowCount = 0;
 
-            int nuevaFila = 1;
+          tableLayoutPanelLibros.AutoScroll = true;
+
+
+            int nuevaFila = 0;
 
             foreach (DataRow row in datos.Rows)
             {
@@ -42,13 +47,17 @@ namespace ProyectoBiblioteca
                 control.Apellido = row.Field<string>("Escritor");
                 control.Eliminar += Control_Eliminar;
                 control.Editar += Control_Editar; 
-                control.Dock = DockStyle.Fill;
-                tableLayoutPanelLibros.RowCount = tableLayoutPanelLibros.RowCount + 1;
-                tableLayoutPanelLibros.RowStyles.Insert(nuevaFila, new RowStyle(SizeType.AutoSize));
-                tableLayoutPanelLibros.Controls.Add(control, 1, nuevaFila);
+                control.Dock = DockStyle.Top;
+                control.Dock = DockStyle.Top;
+
+                tableLayoutPanelLibros.RowCount++;
+                tableLayoutPanelLibros.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+              tableLayoutPanelLibros.Controls.Add(control, 0, nuevaFila);
+
                 nuevaFila++;
             }
-
+            tableLayoutPanelLibros.Padding = new Padding(6);
         }
 
         private void Control_Editar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
@@ -109,6 +118,12 @@ namespace ProyectoBiblioteca
             Cargar(controladorLibro.CargarDatosLibro());
         }
 
+
+        private void tableLayoutPanelLibros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -131,7 +146,7 @@ namespace ProyectoBiblioteca
                     else
                     {
                         MessageBox.Show("No se encontraron libros con el criterio de busqueda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    
+
 
                     }
                 }
@@ -142,11 +157,6 @@ namespace ProyectoBiblioteca
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void tableLayoutPanelLibros_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -123,9 +123,9 @@
             // tlpSecundarioUsuarios
             // 
             this.tlpSecundarioUsuarios.ColumnCount = 3;
-            this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.70111F));
-            this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.08164F));
-            this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.21725F));
+            this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpSecundarioUsuarios.Controls.Add(this.btAgregar, 2, 0);
             this.tlpSecundarioUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSecundarioUsuarios.Location = new System.Drawing.Point(3, 61);
@@ -158,6 +158,7 @@
             this.btAgregar.Location = new System.Drawing.Point(542, 13);
             this.btAgregar.Margin = new System.Windows.Forms.Padding(13);
             this.btAgregar.Name = "btAgregar";
+            this.btAgregar.Padding = new System.Windows.Forms.Padding(3);
             this.btAgregar.Size = new System.Drawing.Size(239, 47);
             this.btAgregar.TabIndex = 3;
             this.btAgregar.Text = "Agregar";

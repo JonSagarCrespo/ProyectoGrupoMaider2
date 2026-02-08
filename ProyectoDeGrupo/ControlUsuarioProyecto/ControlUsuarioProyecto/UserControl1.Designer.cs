@@ -44,7 +44,8 @@
             // 
             // tblpPricipal
             // 
-            this.tblpPricipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tblpPricipal.BackColor = System.Drawing.Color.IndianRed;
+            this.tblpPricipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tblpPricipal.ColumnCount = 7;
             this.tblpPricipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblpPricipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -81,6 +82,7 @@
             // btAgregar
             // 
             this.btAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btAgregar.Image")));
             this.btAgregar.Location = new System.Drawing.Point(517, 2);
             this.btAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
