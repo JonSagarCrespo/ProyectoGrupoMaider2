@@ -27,14 +27,24 @@ namespace ProyectoBiblioteca.Vista
 
         private void btEditar_Click(object sender, EventArgs e)
         {
-            int libroId = int.Parse(lEidLibro.Text); 
+            int libroId = int.Parse(lEidLibro.Text);
+            int valorDisponible = 10000; 
 
-            formularioEditarLib.EditLibro(libroId,
-                tbTitulo.Text, 
-                tbEscritor.Text, 
-                int.Parse(tbAno_edicion.Text),
-                tbSinopsis.Text,
-                int.Parse(chbDisponible.Text));
+            if (chbDisponible.Checked)
+            {
+                valorDisponible = 1; 
+            }
+            else
+            {
+                valorDisponible = 0;
+            }
+
+                formularioEditarLib.EditLibro(libroId,
+                    tbTitulo.Text,
+                    tbEscritor.Text,
+                    int.Parse(tbAno_edicion.Text),
+                    tbSinopsis.Text,
+                    valorDisponible);
 
             MessageBox.Show("Se ha editado el libro correctametne");
             this.Close();
