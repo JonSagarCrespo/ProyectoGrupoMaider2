@@ -26,22 +26,15 @@ namespace ProyectoBiblioteca.Modelo.Libro
 
         }
 
-        public List<Libro> filtrarLibro(string texto, int id)
+        public List<Libro> SacarLibroConID(int id)
         {
 
             List<Libro> Resultadolibros = new List<Libro>();
             SQLiteCommand cmd;
-            if (id > 0)
-            {
+           
                 cmd = new SQLiteCommand("SELECT * FROM Libros WHERE ID = @id ");
                 cmd.Parameters.AddWithValue("@id", id);
-            }
-            else
-            {
-                cmd = new SQLiteCommand("SELECT * FROM Libros WHERE Titulo LIKE @Titulo OR Escritor LIKE @Escritor");
-                cmd.Parameters.AddWithValue("@Titulo", texto);
-                cmd.Parameters.AddWithValue("@Escritor", texto);
-            }
+           
             using (SQLiteDataReader reader = Conexion.GetDataReader(ruta, cmd))
             {
                 while (reader.Read())
@@ -60,6 +53,34 @@ namespace ProyectoBiblioteca.Modelo.Libro
 
 
         }
+
+        // filtrar Libros
+        public DataTable filtrarLibroPorID(string texto, int id)
+        {
+            DataTable datos = new DataTable();
+            SQLiteCommand cmd;
+            {
+                if (id > 0)
+                {
+                    cmd = new SQLiteCommand("SELECT * FROM Libros WHERE ID = @id ");
+                    cmd.Parameters.AddWithValue("@id", id);
+                }
+                else
+                {
+                    cmd = new SQLiteCommand("SELECT * FROM Libros WHERE Titulo LIKE @Titulo OR Escritor LIKE @Escritor");
+                    cmd.Parameters.AddWithValue("@Titulo", texto);
+                    cmd.Parameters.AddWithValue("@Escritor", texto);
+                }
+                datos = Conexion.GetDataTable(ruta, cmd);
+            }
+
+
+            return datos;
+
+        }
+
+
+
         public List<Libro> obtenerLibros()
         {
             List<Libro> resultadoLibros = new List<Libro>();
@@ -100,9 +121,30 @@ namespace ProyectoBiblioteca.Modelo.Libro
             datos = Conexion.GetDataTable(Properties.Settings.Default.conexion, cmd);
             return datos;
         }
+
+
+
+        public void EditarLibro(int id, string titulo, string escritor, int ano_edicion , string sinopsis, int disponible)
+        {
+            string sql = "UPDATE Libros SET Titulo=@titulo, Escritor=@escritor, Ano_Edicion=@ano_edicion, Sinopsis=@sinopsis, Disponible=@disponible WHERE ID=@id";
+            SQLiteCommand cmd = new SQLiteCommand(sql);
+
+            cmd.Parameters.Add("@id", DbType.Int32).Value = id;
+            cmd.Parameters.Add("@titulo", DbType.String).Value = titulo;
+            cmd.Parameters.Add("@escritor", DbType.String).Value = escritor;
+            cmd.Parameters.Add("@ano_edicion", DbType.Int32).Value = ano_edicion;
+            cmd.Parameters.Add("@ano_edicion", DbType.String).Value = ano_edicion;
+            cmd.Parameters.Add("@sinopsis", DbType.String).Value = sinopsis;
+            cmd.Parameters.Add("@disponible", DbType.Int32).Value = disponible;
+
+
+
+            Conexion.Ejecuta(ruta, cmd);
+
+
+        }
+
     }
-
-
 
 }
 

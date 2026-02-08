@@ -126,7 +126,7 @@ namespace ProyectoBiblioteca
             
 
             int sacarID = e.Id;
-            var filtrado = controladorUsuario.Prueba(sacarID);
+            var filtrado = controladorUsuario.MuestraUsu(sacarID);
 
 
             foreach (var usuario in filtrado)
@@ -143,12 +143,12 @@ namespace ProyectoBiblioteca
         private void Control_Agregar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
             int sacarID = e.Id;
-            var filtrado = controladorUsuario.Prueba(sacarID);
+            var filtrado = controladorUsuario.MuestraUsu(sacarID);
 
             formularioEditarUsuario form = new formularioEditarUsuario();
             foreach (var usuario in filtrado)
             {
-                MessageBox.Show(usuario.Id.ToString());
+                //MessageBox.Show(usuario.Id.ToString());
                 form.lEid.Text = usuario.Id.ToString();
                 form.tbNombre.Text = usuario.Nombre.ToString();
                 form.tbApe1.Text = usuario.Apellido1.ToString();

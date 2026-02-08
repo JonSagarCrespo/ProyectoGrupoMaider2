@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Modelo; 
 
 namespace ProyectoBiblioteca.Controlador
 {
@@ -37,8 +38,8 @@ namespace ProyectoBiblioteca.Controlador
             if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
                 throw new Exception(errores);
 
-            //if (id == null || id == 0) 
-            //{
+            /*//if (id == null || id == 0) 
+            //{*/
                 listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
             //}
             //else
@@ -67,12 +68,12 @@ namespace ProyectoBiblioteca.Controlador
                 throw new Exception(errores);
 
             
-            listaUsuarios.EditarUsuario(id,nombre, Apellido1, Apellido2, telefono);
+            listaUsuarios.EditUsuario(id,nombre, Apellido1, Apellido2, telefono);
            
         }
 
 
-
+        //filtrar usuario
         public DataTable FiltrarUsuarios(string texto)
 
         {
@@ -86,9 +87,27 @@ namespace ProyectoBiblioteca.Controlador
                return listaUsuarios.filtrarUsuarios(texto, 0);
 
         }
-  
 
-         public List<Usuario> Prueba(int id)
+
+        // filtrar libros
+        public DataTable FiltrarLibros(string texto)
+
+        {
+            int id;
+            bool esId = int.TryParse(texto, out id);
+
+
+            if (esId)
+                return listaLibros.filtrarLibroPorID("", id);
+            else
+                return listaLibros.filtrarLibroPorID(texto, 0);
+
+        }
+
+
+
+        // Muestra el usuario
+        public List<Usuario> MuestraUsu(int id)
 
         {
             
@@ -108,6 +127,32 @@ namespace ProyectoBiblioteca.Controlador
                 resultado.Add($"{u.Id} - {u.Nombre} {u.Apellido1} {u.Apellido2} ({u.Telefono})");
 
             return usuarios; 
+
+        }
+
+
+        // Muestra el Libro
+
+        public List<Libro> MuestraLib(int id)
+
+        {
+
+            List<Libro> libros;
+
+
+            libros = listaLibros.SacarLibroConID(id); 
+
+
+            if (libros.Count == 0)
+                throw new Exception("No se encontraron usuarios con esos criterios");
+
+            List<string> resultado = new List<string>();
+
+            foreach (Libro lib in libros)
+
+                resultado.Add($"{lib.Id} ,{lib.Titulo}, {lib.Escritor}, {lib.Ano_Edicion}, {lib.Sinopsis}, {lib.Disponible} )");
+
+            return libros;
 
         }
 
@@ -151,6 +196,19 @@ namespace ProyectoBiblioteca.Controlador
                 throw new Exception("Falta el año de edicion " + Environment.NewLine);
 
             listaLibros.AgregarLibros(titulo, escritor, ano_edicion, sinopsis, disponible);
+        }
+
+
+        public void EditLibro(int id, string titulo, string escritor, int ano_edicion, string sinopsis, int disponible)
+        {
+            if (titulo.Trim().Length == 0)
+                throw new Exception("Falta el titulo" + Environment.NewLine);
+            if (escritor.Trim().Length == 0)
+                throw new Exception("Falta el escritor" + Environment.NewLine);
+            if (ano_edicion <= 0)
+                throw new Exception("Falta el año de edicion " + Environment.NewLine);
+
+            listaLibros.EditarLibro(id, titulo, escritor, ano_edicion, sinopsis, disponible);
         }
 
 

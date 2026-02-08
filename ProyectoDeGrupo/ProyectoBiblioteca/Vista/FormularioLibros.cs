@@ -53,12 +53,33 @@ namespace ProyectoBiblioteca
 
         private void Control_AgregarLibro1(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
-            formularioAgregarLibro form = new formularioAgregarLibro();
-            form.controladorAgregarLib = this.controladorLibro;
+            int sacarID = e.Id;
+            MessageBox.Show($"{sacarID}");
+  
+            var filtrado = controladorLibro.MuestraLib(sacarID);
+
+            formularioEditarLibro form = new formularioEditarLibro();
+            foreach (var libro in filtrado)
+            {
+                //MessageBox.Show(usuario.Id.ToString());
+                form.lEidLibro.Text = libro.Id.ToString();
+                form.tbTitulo.Text = libro.Titulo.ToString();
+                form.tbEscritor.Text = libro.Escritor.ToString();
+                form.tbAno_edicion.Text = libro.Ano_Edicion.ToString();
+                form.tbSinop.Text = libro.Sinopsis.ToString();
+                form.chbDisponible.Checked = Convert.ToBoolean(libro.Disponible);
+                
+
+
+            }
+
+            //form.formularioEditarUsu = this.controladorUsuario;
+
+
             this.Hide();
             form.ShowDialog();
             this.Show();
-            Cargar(controladorLibro.CargarDatosLibro());
+
         }
 
 
@@ -70,24 +91,53 @@ namespace ProyectoBiblioteca
 
         }
 
-        private void menPrestamos_Click(object sender, EventArgs e)
+        private void btAgregar_Click(object sender, EventArgs e)
         {
 
+            formularioAgregarLibro form = new formularioAgregarLibro();
+            form.controladorAgregarLib = this.controladorLibro;
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+            Cargar(controladorLibro.CargarDatosLibro());
         }
 
-        private void menLibros_Click(object sender, EventArgs e)
+        private void btBuscar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string texto = txbBuscarLibro.Text;
 
-        }
+                if (string.IsNullOrEmpty(texto))
+                {
+                    Cargar(controladorLibro.CargarDatosLibro());
+                }
+                else
+                {
+                    var resultado = controladorLibro.FiltrarLibros(texto);
 
-        private void menUsuarios_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+                    if (resultado.Rows.Count > 0)
+                    {
+                        Cargar(controladorLibro.FiltrarLibros(texto));
 
-        private void tableLayoutPanelLibros_Paint(object sender, PaintEventArgs e)
-        {
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron libros con el criterio de busqueda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Cargar(controladorLibro.CargarDatosLibro());
 
+                    }
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

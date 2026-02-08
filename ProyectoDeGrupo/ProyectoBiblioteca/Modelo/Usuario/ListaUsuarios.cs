@@ -22,6 +22,9 @@ namespace ProyectoBiblioteca.Modelo
 
 
         }
+
+
+        // filtrar Usuarios
         public DataTable filtrarUsuarios(string texto, int id)
         {
             DataTable datos = new DataTable();
@@ -123,7 +126,7 @@ namespace ProyectoBiblioteca.Modelo
         }
 
 
-        public void EditarUsuario(int id, string nombre, string Apellido1, string Apellido2, int telefono)
+        public void EditUsuario(int id, string nombre, string Apellido1, string Apellido2, int telefono)
         {
             string sql = "UPDATE Usuarios SET Nombre=@nom, Apellido_1=@ape1, Apellido_2=@ape2, Telefono=@tel WHERE Id=@id";
             SQLiteCommand cmd = new SQLiteCommand(sql);
