@@ -15,14 +15,15 @@ namespace ProyectoBiblioteca.Vista
     {
         
 
-        public controlador formularioEditarUsu { get; set; }
+      
+        public controlador controladorEditarUsuario{ get; set; }
         public formularioEditarUsuario()
         {
             InitializeComponent();
 
             // Necesario inicializarlo para que tenga algun valor que coger y no salte
             //NullReferenceException
-            formularioEditarUsu = new controlador();
+            controladorEditarUsuario = new controlador();
         }
 
         private void formularioEditarUsuario_Load(object sender, EventArgs e)
@@ -40,9 +41,10 @@ namespace ProyectoBiblioteca.Vista
             string ape2 = tbApe2.Text;
             int tel = int.Parse(tbTelefono.Text);
 
-            formularioEditarUsu.EditarUsuario(eId,nom, ape1, ape2, tel);
+            controladorEditarUsuario.EditarUsuario(eId,nom, ape1, ape2, tel);
             MessageBox.Show($"Se ha editado el usuario {tbNombre.Text}");
             this.Close();
+            
 
         }
 

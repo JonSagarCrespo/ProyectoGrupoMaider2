@@ -13,11 +13,11 @@ namespace ProyectoBiblioteca.Vista
 {
     public partial class formularioEditarLibro : Form
     {
-        controlador formularioEditarLib { get; set; }
+       public controlador controladorEditarLibro { get; set; }
         public formularioEditarLibro()
         {
             InitializeComponent();
-            formularioEditarLib = new controlador();
+            controladorEditarLibro = new controlador();
         }
 
         private void btCancelar_Click_1(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace ProyectoBiblioteca.Vista
         private void btEditar_Click(object sender, EventArgs e)
         {
             int libroId = int.Parse(lEidLibro.Text);
-            int valorDisponible = 10000; 
+            int valorDisponible = 1; 
 
             if (chbDisponible.Checked)
             {
@@ -38,8 +38,7 @@ namespace ProyectoBiblioteca.Vista
             {
                 valorDisponible = 0;
             }
-
-                formularioEditarLib.EditLibro(libroId,
+            controladorEditarLibro.EditLibro(libroId,
                     tbTitulo.Text,
                     tbEscritor.Text,
                     int.Parse(tbAno_edicion.Text),

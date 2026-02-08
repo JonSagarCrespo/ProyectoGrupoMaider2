@@ -5,22 +5,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using ProyectoBiblioteca.Modelo; 
+
 
 namespace ProyectoBiblioteca.Controlador
 {
     public class controlador
     {
-
-        /// <summary>
-        ///USUARIO  controlador de insertar usuaruio y filtrar usuario , "faltaria eliminar usuario, intentar completarlo "
-        /// </summary>
         private ListaUsuarios listaUsuarios = new ListaUsuarios();
         private ListaLibros listaLibros = new ListaLibros();
 
-
-
-        public void InsertarUsuario(/*int ? id, */string nombre, string Apellido1, string Apellido2, int telefono)
+        public void InsertarUsuario(string nombre, string Apellido1, string Apellido2, int telefono)
         {
             string errores = "";
 
@@ -32,24 +26,41 @@ namespace ProyectoBiblioteca.Controlador
 
             if (telefono <= 9)
 
-                errores += "falta numero de telefono " + Environment.NewLine;
+                errores += "formato de telefono no valido " + Environment.NewLine;
 
 
             if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
                 throw new Exception(errores);
 
-            /*//if (id == null || id == 0) 
-            //{*/
-                listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
-            //}
-            //else
-            //{
-            //    listaUsuarios.EditarUsuario(nombre, Apellido1, Apellido2, telefono);
-            //}
+            listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
+        }
+
+        public bool eleminarUsuario(int id)
+        {
+            listaUsuarios.eliminarUsuario(id);
+
+            return true;
         }
 
 
-        public void EditarUsuario(int  id, string nombre, string Apellido1, string Apellido2, int telefono)
+
+        public List<Usuario> MuestraUsu(int id)
+        {
+            List<Usuario> usuarios;
+            usuarios = listaUsuarios.SacarUsuarioConID(id);
+
+            if (usuarios.Count == 0)
+                throw new Exception("No se encontraron usuarios con esos criterios");
+
+            return usuarios;
+        }
+        public DataTable CargarDatosUsuario()
+        {
+            return listaUsuarios.CargarTodo();
+        }
+
+
+        public void EditarUsuario(int id, string nombre, string Apellido1, string Apellido2, int telefono)
         {
             string errores = "";
 
@@ -67,9 +78,9 @@ namespace ProyectoBiblioteca.Controlador
             if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
                 throw new Exception(errores);
 
-            
-            listaUsuarios.EditUsuario(id,nombre, Apellido1, Apellido2, telefono);
-           
+
+            listaUsuarios.EditUsuario(id, nombre, Apellido1, Apellido2, telefono);
+
         }
 
 
@@ -79,12 +90,12 @@ namespace ProyectoBiblioteca.Controlador
         {
             int id;
             bool esId = int.TryParse(texto, out id);
-            
+
 
             if (esId)
                 return listaUsuarios.filtrarUsuarios("", id);
             else
-               return listaUsuarios.filtrarUsuarios(texto, 0);
+                return listaUsuarios.filtrarUsuarios(texto, 0);
 
         }
 
@@ -106,73 +117,19 @@ namespace ProyectoBiblioteca.Controlador
 
 
 
-        // Muestra el usuario
-        public List<Usuario> MuestraUsu(int id)
-
-        {
-            
-            List<Usuario> usuarios;
-
-           
-                usuarios = listaUsuarios.SacarUsuarioConID(id); 
-           
-            
-            if (usuarios.Count == 0)
-                throw new Exception("No se encontraron usuarios con esos criterios");
-
-            List<string> resultado = new List<string>();
-
-            foreach (Usuario u in usuarios)
-
-                resultado.Add($"{u.Id} - {u.Nombre} {u.Apellido1} {u.Apellido2} ({u.Telefono})");
-
-            return usuarios; 
-
-        }
-
-
         // Muestra el Libro
 
         public List<Libro> MuestraLib(int id)
 
         {
-
             List<Libro> libros;
-
-
-            libros = listaLibros.SacarLibroConID(id); 
-
-
+            libros = listaLibros.SacarLibroConID(id);
             if (libros.Count == 0)
                 throw new Exception("No se encontraron usuarios con esos criterios");
-
-            List<string> resultado = new List<string>();
-
-            foreach (Libro lib in libros)
-
-                resultado.Add($"{lib.Id} ,{lib.Titulo}, {lib.Escritor}, {lib.Ano_Edicion}, {lib.Sinopsis}, {lib.Disponible} )");
 
             return libros;
 
         }
-
-
-        public bool eleminarUsuario(int id)
-        {
-            listaUsuarios.eliminarUsuario(id);
-
-            return true;
-        }
-
-
-
-        public DataTable CargarDatosUsuario()
-        {
-            return listaUsuarios.CargarTodo();
-        }
-
-        // Controlador de Libros 
-
 
 
         public bool eliminarLibro(int id)
@@ -210,10 +167,5 @@ namespace ProyectoBiblioteca.Controlador
 
             listaLibros.EditarLibro(id, titulo, escritor, ano_edicion, sinopsis, disponible);
         }
-
-
-
-
-
     }
 }

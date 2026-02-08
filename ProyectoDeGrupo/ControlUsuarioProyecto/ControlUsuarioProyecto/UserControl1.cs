@@ -51,12 +51,9 @@ namespace ControlUsuarioProyecto
             {
                 Id = id;
             }
-            public ClickarBotonSeleccionarEventArgs()
-            {
-
-            }
+     
         }
-        public event EventHandler<ClickarBotonSeleccionarEventArgs> Agregar;
+        public event EventHandler<ClickarBotonSeleccionarEventArgs> Editar;
 
       
 
@@ -65,33 +62,11 @@ namespace ControlUsuarioProyecto
         
 
 
-        private void btAgregar_Click(object sender, EventArgs e)
-        {
+    
 
-          
-                Agregar?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
-            
-        }
+    
 
-        private void btEliminar_Click(object sender, EventArgs e)
-        {
-            
-                Eliminar?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
-            
-
-        }
-
-        private void btEliminar_Click_1(object sender, EventArgs e)
-        {
-            if (ckSeleccionar.Checked)
-                btEliminar_Click(sender, e);
-
-        }
-
-        private void btAgregar_Click_1(object sender, EventArgs e)
-        {
-            btAgregar_Click(sender, e);
-        }
+   
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -100,6 +75,20 @@ namespace ControlUsuarioProyecto
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void btAgregar_Click(object sender, EventArgs e)
+        {
+            Editar?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
+        }
+
+        private void btEliminar_Click(object sender, EventArgs e)
+        {
+            if (ckSeleccionar.Checked)
+            {
+                Eliminar?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
+            }
 
         }
     }

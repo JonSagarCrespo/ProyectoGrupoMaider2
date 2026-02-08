@@ -13,18 +13,13 @@ namespace ProyectoBiblioteca.Vista
 {
     public partial class FormularioAgregarUsuario : Form
     {
-
-        public controlador formularioAgregarUsu { get; set; }
+        public controlador controladroAgregarUsuario { get; set; }
 
         public FormularioAgregarUsuario()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
@@ -33,10 +28,17 @@ namespace ProyectoBiblioteca.Vista
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            formularioAgregarUsu.InsertarUsuario(tbNombre.Text, tbApe1.Text, tbApe2.Text, int.Parse(tbTelefono.Text));
-            MessageBox.Show($"Se ha agreado el usuario {tbNombre.Text}" );
-            this.Close(); 
-        
+            try
+            {
+                controladroAgregarUsuario.InsertarUsuario(tbNombre.Text, tbApe1.Text, tbApe2.Text, int.Parse(tbTelefono.Text));
+                MessageBox.Show($"Se ha agreado el usuario {tbNombre.Text}");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar el usuario: {ex.Message}");
+            }
+
         }
 
         private void btLimpiar_Click(object sender, EventArgs e)
@@ -47,9 +49,5 @@ namespace ProyectoBiblioteca.Vista
             tbTelefono.Text = ""; 
         }
 
-        private void tlpPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

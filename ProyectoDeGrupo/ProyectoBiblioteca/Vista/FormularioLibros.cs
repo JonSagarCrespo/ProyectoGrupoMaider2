@@ -17,7 +17,7 @@ namespace ProyectoBiblioteca
 
         private void FormularioLibros_Load(object sender, EventArgs e)
         {
-            Cargar(controladorLibro.CargarDatosLibro());
+     
         }
 
         private void smiInsertar_Click(object sender, EventArgs e)
@@ -40,8 +40,8 @@ namespace ProyectoBiblioteca
                 control.Id = (int)row.Field<long>("id");
                 control.Nombre = row.Field<string>("Titulo");
                 control.Apellido = row.Field<string>("Escritor");
-                control.Eliminar += Control_eliminarLibro;
-                control.Agregar += Control_AgregarLibro1;
+                control.Eliminar += Control_Eliminar;
+                control.Editar += Control_Editar; 
                 control.Dock = DockStyle.Fill;
                 tableLayoutPanelLibros.RowCount = tableLayoutPanelLibros.RowCount + 1;
                 tableLayoutPanelLibros.RowStyles.Insert(nuevaFila, new RowStyle(SizeType.AutoSize));
@@ -51,14 +51,18 @@ namespace ProyectoBiblioteca
 
         }
 
-        private void Control_AgregarLibro1(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
+        private void Control_Editar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
             int sacarID = e.Id;
             MessageBox.Show($"{sacarID}");
-  
+
             var filtrado = controladorLibro.MuestraLib(sacarID);
 
             formularioEditarLibro form = new formularioEditarLibro();
+            form.controladorEditarLibro = this.controladorLibro;
+
+
+   
             foreach (var libro in filtrado)
             {
                 //MessageBox.Show(usuario.Id.ToString());
@@ -68,28 +72,31 @@ namespace ProyectoBiblioteca
                 form.tbAno_edicion.Text = libro.Ano_Edicion.ToString();
                 form.tbSinop.Text = libro.Sinopsis.ToString();
                 form.chbDisponible.Checked = Convert.ToBoolean(libro.Disponible);
-                
-
 
             }
+          
 
-            //form.formularioEditarUsu = this.controladorUsuario;
 
 
             this.Hide();
             form.ShowDialog();
             this.Show();
 
+            Cargar(controladorLibro.CargarDatosLibro());
         }
 
-
-        private void Control_eliminarLibro(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
+        private void Control_Eliminar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
             controladorLibro.eliminarLibro(e.Id);
             Cargar(controladorLibro.CargarDatosLibro());
             MessageBox.Show("libro eliminado correctamente");
 
         }
+
+    
+
+
+   
 
         private void btAgregar_Click(object sender, EventArgs e)
         {
@@ -124,13 +131,10 @@ namespace ProyectoBiblioteca
                     else
                     {
                         MessageBox.Show("No se encontraron libros con el criterio de busqueda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Cargar(controladorLibro.CargarDatosLibro());
+    
 
                     }
                 }
-
-
-
 
 
             }
@@ -138,6 +142,11 @@ namespace ProyectoBiblioteca
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void tableLayoutPanelLibros_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

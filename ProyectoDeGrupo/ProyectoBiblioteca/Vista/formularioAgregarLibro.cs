@@ -28,30 +28,33 @@ namespace ProyectoBiblioteca.Vista
             tbEscritor.Text = "";
             tbAno_edicion.Text = "";
             tbSinopsis.Text = "";
-            tbDisponible.Text = "";
-        }
 
+        }
+     
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            controladorAgregarLib.InsertarLibro(tbTitulo.Text, tbEscritor.Text, int.Parse(tbAno_edicion.Text), tbSinopsis.Text, int.Parse(tbDisponible.Text));
+            int numero = 0;
 
-            this.Close();
+            if (ckDisponible.Checked)
+            {
+                numero = 1;
+            }
+            else
+                numero = 0;
+            try
+            {
 
+                controladorAgregarLib.InsertarLibro(tbTitulo.Text, tbEscritor.Text, int.Parse(tbAno_edicion.Text), tbSinopsis.Text, numero);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar el libro: {ex.Message}");
+            }
         }
 
         private void btLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
-        }
-
-        private void smiInsertar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void menUsuarios_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btCancelar_Click(object sender, EventArgs e)

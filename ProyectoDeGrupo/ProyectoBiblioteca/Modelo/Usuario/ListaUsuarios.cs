@@ -79,35 +79,6 @@ namespace ProyectoBiblioteca.Modelo
             return resultado;
         }
 
-
-        public List<Usuario> obtenerUsuarios()
-        {
-            List<Usuario> lista2 = new List<Usuario>();
-
-            SQLiteCommand cmd;
-
-            string sql = @"SELECT ID,Nombre,Apellido_1,Apellido_2,Telefono FROM Usuarios where ID=@id";
-            cmd = new SQLiteCommand(sql);
-
-            using (SQLiteDataReader dr = Conexion.GetDataReader(sql, cmd))
-            {
-                while (dr.Read())
-                {
-                    lista2.Add(new Usuario(
-                        dr.GetInt32(0),
-                        dr.GetString(1),
-                        dr.GetString(2),
-                        dr.GetString(3),
-                         dr.GetInt32(4)
-
-                    ));
-                }
-            }
-
-
-            return lista2;
-        }
-
         public void eliminarUsuario(int id)
         {
             string sql = $"DELETE FROM Usuarios WHERE ID={id}";
