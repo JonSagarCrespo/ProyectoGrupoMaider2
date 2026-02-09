@@ -66,19 +66,19 @@ namespace ProyectoBiblioteca
             int sacarID = e.Id;
             MessageBox.Show($"{sacarID}");
 
-            var filtrado = controladorLibro.MuestraLib(sacarID);
+            
 
 
 
             formularioEditarLibro form = new formularioEditarLibro();
             form.controladorEditarLibro = this.controladorLibro;
 
-            form.lEidLibro.Text = filtrado[2].Id.ToString();
-            form.tbTitulo.Text = filtrado[0].Titulo.ToString();
-            form.tbEscritor.Text = filtrado[0].Escritor.ToString();
-            form.tbAno_edicion.Text = filtrado[0].Ano_Edicion.ToString();
-            form.tbSinop.Text = filtrado[0].Sinopsis.ToString();
-            form.chbDisponible.Checked = Convert.ToBoolean(filtrado[0].Disponible);
+            form.lEidLibro.Text = controladorLibro.MuestraLib(sacarID).Id.ToString();
+            form.tbTitulo.Text = controladorLibro.MuestraLib(sacarID).Titulo.ToString();
+            form.tbEscritor.Text = controladorLibro.MuestraLib(sacarID).Escritor.ToString();
+            form.tbAno_edicion.Text = controladorLibro.MuestraLib(sacarID).Ano_Edicion.ToString();
+            form.tbSinop.Text = controladorLibro.MuestraLib(sacarID).Sinopsis.ToString();
+            form.chbDisponible.Checked = Convert.ToBoolean(controladorLibro.MuestraLib(sacarID).Disponible);
 
             this.Hide();
             form.ShowDialog();

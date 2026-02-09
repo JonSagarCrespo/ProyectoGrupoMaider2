@@ -119,13 +119,14 @@ namespace ProyectoBiblioteca.Controlador
 
         // Muestra el Libro
 
-        public List<Libro> MuestraLib(int id)
+        public Libro MuestraLib(int id)
 
         {
-            List<Libro> libros;
-            libros = listaLibros.SacarLibroConID(id);
-            if (libros.Count == 0)
+            var libros = listaLibros.SacarLibroConID(id).FirstOrDefault();
+
+            if (libros == null)
                 throw new Exception("No se encontraron usuarios con esos criterios");
+
 
             return libros;
 
