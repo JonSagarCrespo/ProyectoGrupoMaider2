@@ -27,7 +27,7 @@ namespace ProyectoBiblioteca.Vista
             tbTitulo.Text = "";
             tbEscritor.Text = "";
             tbAno_edicion.Text = "";
-            tbSinopsis.Text = "";
+            lbSinosis.Text = "";
 
         }
      
@@ -45,7 +45,7 @@ namespace ProyectoBiblioteca.Vista
                 numero = 0;
           
 
-                controladorAgregarLib.InsertarLibro(tbTitulo.Text, tbEscritor.Text, int.Parse(tbAno_edicion.Text), tbSinopsis.Text, numero);
+                controladorAgregarLib.InsertarLibro(tbTitulo.Text, tbEscritor.Text, int.Parse(tbAno_edicion.Text), lbSinosis.Text, numero);
                 limpiarCampos();
                 throw new Exception("Libro agregado correctamente");
                 

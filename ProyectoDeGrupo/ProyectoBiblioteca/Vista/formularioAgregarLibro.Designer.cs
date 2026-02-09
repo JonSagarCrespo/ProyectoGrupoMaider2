@@ -34,7 +34,7 @@
             this.txtTitulo = new System.Windows.Forms.Label();
             this.lEscritor = new System.Windows.Forms.Label();
             this.lAno_edicion = new System.Windows.Forms.Label();
-            this.tbSinopsis = new System.Windows.Forms.Label();
+            this.lbSinosis = new System.Windows.Forms.Label();
             this.tbTitulo = new System.Windows.Forms.TextBox();
             this.tbAno_edicion = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtTitulo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lEscritor, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lAno_edicion, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbSinopsis, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lbSinosis, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbTitulo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbAno_edicion, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbEmail, 1, 4);
@@ -149,18 +149,18 @@
             this.lAno_edicion.Text = "Año edicion";
             this.lAno_edicion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tbSinopsis
+            // lbSinosis
             // 
-            this.tbSinopsis.AutoSize = true;
-            this.tbSinopsis.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSinopsis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSinopsis.Location = new System.Drawing.Point(22, 204);
-            this.tbSinopsis.Name = "tbSinopsis";
-            this.tbSinopsis.Size = new System.Drawing.Size(175, 26);
-            this.tbSinopsis.TabIndex = 4;
-            this.tbSinopsis.Text = "Sinopsis";
-            this.tbSinopsis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSinosis.AutoSize = true;
+            this.lbSinosis.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbSinosis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSinosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSinosis.Location = new System.Drawing.Point(22, 204);
+            this.lbSinosis.Name = "lbSinosis";
+            this.lbSinosis.Size = new System.Drawing.Size(175, 26);
+            this.lbSinosis.TabIndex = 4;
+            this.lbSinosis.Text = "Sinopsis";
+            this.lbSinosis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbTitulo
             // 
@@ -282,7 +282,7 @@
         private System.Windows.Forms.Label txtTitulo;
         private System.Windows.Forms.Label lEscritor;
         private System.Windows.Forms.Label lAno_edicion;
-        private System.Windows.Forms.Label tbSinopsis;
+        private System.Windows.Forms.Label lbSinosis;
         private System.Windows.Forms.TextBox tbTitulo;
         private System.Windows.Forms.TextBox tbAno_edicion;
         private System.Windows.Forms.TextBox tbEmail;
