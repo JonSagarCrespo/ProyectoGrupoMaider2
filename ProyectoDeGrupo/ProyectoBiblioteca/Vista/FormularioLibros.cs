@@ -69,9 +69,6 @@ namespace ProyectoBiblioteca
 
             formularioEditarLibro form = new formularioEditarLibro();
             form.controladorEditarLibro = this.controladorLibro;
-
-
-   
             foreach (var libro in filtrado)
             {
                 //MessageBox.Show(usuario.Id.ToString());

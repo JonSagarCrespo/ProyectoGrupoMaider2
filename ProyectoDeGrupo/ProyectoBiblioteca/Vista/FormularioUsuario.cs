@@ -57,16 +57,6 @@ namespace ProyectoBiblioteca
             }
         }
 
-        private void btAgregar_Click(object sender, EventArgs e)
-        {
-            FormularioAgregarUsuario form = new FormularioAgregarUsuario();
-            form.controladroAgregarUsuario = this.controladorUsuario;
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
-            Cargar(controladorUsuario.CargarDatosUsuario());
-        }
-
 
         public void Cargar(DataTable datos)
         {
@@ -144,7 +134,15 @@ namespace ProyectoBiblioteca
             Cargar(controladorUsuario.CargarDatosUsuario());
         }
 
+        private void btAgregar_Click_1(object sender, EventArgs e)
+        {
 
-       
+            FormularioAgregarUsuario form = new FormularioAgregarUsuario();
+            form.controladroAgregarUsuario = this.controladorUsuario;
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+            Cargar(controladorUsuario.CargarDatosUsuario());
+        }
     }
 }

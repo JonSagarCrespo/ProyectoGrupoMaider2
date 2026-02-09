@@ -8,6 +8,6 @@ namespace ProyectoBiblioteca.Modelo.Prestamos
 {
     internal class ListaPrestamo
     {
-
+        private string ruta = Properties.Settings.Default.conexion;
     }
 }

@@ -34,8 +34,8 @@
             this.txbBuscarUsuario = new System.Windows.Forms.TextBox();
             this.btBuscar = new System.Windows.Forms.Button();
             this.tlpSecundarioUsuarios = new System.Windows.Forms.TableLayoutPanel();
-            this.panelUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.btAgregar = new System.Windows.Forms.Button();
+            this.panelUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPrincipalUsuarios.SuspendLayout();
             this.tlpEncabezadoUsuarios.SuspendLayout();
             this.tlpSecundarioUsuarios.SuspendLayout();
@@ -136,6 +136,22 @@
             this.tlpSecundarioUsuarios.Size = new System.Drawing.Size(794, 73);
             this.tlpSecundarioUsuarios.TabIndex = 1;
             // 
+            // btAgregar
+            // 
+            this.btAgregar.BackColor = System.Drawing.Color.Turquoise;
+            this.btAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btAgregar.Location = new System.Drawing.Point(541, 13);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(13);
+            this.btAgregar.Name = "btAgregar";
+            this.btAgregar.Padding = new System.Windows.Forms.Padding(3);
+            this.btAgregar.Size = new System.Drawing.Size(240, 47);
+            this.btAgregar.TabIndex = 3;
+            this.btAgregar.Text = "Agregar";
+            this.btAgregar.UseVisualStyleBackColor = false;
+            this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click_1);
+            // 
             // panelUsuarios
             // 
             this.panelUsuarios.ColumnCount = 1;
@@ -148,21 +164,6 @@
             this.panelUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelUsuarios.Size = new System.Drawing.Size(792, 306);
             this.panelUsuarios.TabIndex = 2;
-            // 
-            // btAgregar
-            // 
-            this.btAgregar.BackColor = System.Drawing.Color.Turquoise;
-            this.btAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btAgregar.Location = new System.Drawing.Point(542, 13);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(13);
-            this.btAgregar.Name = "btAgregar";
-            this.btAgregar.Padding = new System.Windows.Forms.Padding(3);
-            this.btAgregar.Size = new System.Drawing.Size(239, 47);
-            this.btAgregar.TabIndex = 3;
-            this.btAgregar.Text = "Agregar";
-            this.btAgregar.UseVisualStyleBackColor = false;
             // 
             // FormularioUsuario
             // 

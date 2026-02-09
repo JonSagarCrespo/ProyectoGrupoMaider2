@@ -33,7 +33,9 @@ namespace ProyectoBiblioteca.Vista
      
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            int numero = 0;
+            try
+            {
+                int numero = 0;
 
             if (ckDisponible.Checked)
             {
@@ -41,14 +43,18 @@ namespace ProyectoBiblioteca.Vista
             }
             else
                 numero = 0;
-            try
-            {
+          
 
                 controladorAgregarLib.InsertarLibro(tbTitulo.Text, tbEscritor.Text, int.Parse(tbAno_edicion.Text), tbSinopsis.Text, numero);
+                limpiarCampos();
+                throw new Exception("Libro agregado correctamente");
+                
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al agregar el libro: {ex.Message}");
+                MessageBox.Show(ex.Message);
             }
         }
 
