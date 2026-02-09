@@ -118,7 +118,7 @@ namespace ProyectoBiblioteca.Modelo.Libro
             DataTable datos = new DataTable();
             string sql = "SELECT * FROM Libros";
             SQLiteCommand cmd = new SQLiteCommand(sql);
-            datos = Conexion.GetDataTable(Properties.Settings.Default.conexion, cmd);
+            datos = Conexion.GetDataTable(ruta, cmd);
             return datos;
         }
 

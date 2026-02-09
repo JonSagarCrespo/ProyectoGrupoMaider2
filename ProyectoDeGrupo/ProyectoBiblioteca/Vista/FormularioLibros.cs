@@ -1,4 +1,5 @@
 ﻿using ProyectoBiblioteca.Controlador;
+using ProyectoBiblioteca.Modelo.Libro;
 using ProyectoBiblioteca.Vista;
 using System;
 using System.Data;
@@ -67,22 +68,17 @@ namespace ProyectoBiblioteca
 
             var filtrado = controladorLibro.MuestraLib(sacarID);
 
+
+
             formularioEditarLibro form = new formularioEditarLibro();
             form.controladorEditarLibro = this.controladorLibro;
-            foreach (var libro in filtrado)
-            {
-                //MessageBox.Show(usuario.Id.ToString());
-                form.lEidLibro.Text = libro.Id.ToString();
-                form.tbTitulo.Text = libro.Titulo.ToString();
-                form.tbEscritor.Text = libro.Escritor.ToString();
-                form.tbAno_edicion.Text = libro.Ano_Edicion.ToString();
-                form.tbSinop.Text = libro.Sinopsis.ToString();
-                form.chbDisponible.Checked = Convert.ToBoolean(libro.Disponible);
 
-            }
-          
-
-
+            form.lEidLibro.Text = filtrado[2].Id.ToString();
+            form.tbTitulo.Text = filtrado[0].Titulo.ToString();
+            form.tbEscritor.Text = filtrado[0].Escritor.ToString();
+            form.tbAno_edicion.Text = filtrado[0].Ano_Edicion.ToString();
+            form.tbSinop.Text = filtrado[0].Sinopsis.ToString();
+            form.chbDisponible.Checked = Convert.ToBoolean(filtrado[0].Disponible);
 
             this.Hide();
             form.ShowDialog();

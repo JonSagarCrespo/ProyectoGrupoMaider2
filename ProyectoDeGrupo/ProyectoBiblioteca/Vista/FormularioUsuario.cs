@@ -1,4 +1,5 @@
 ﻿using ProyectoBiblioteca.Controlador;
+using ProyectoBiblioteca.Modelo;
 using ProyectoBiblioteca.Vista;
 using System;
 using System.Data;
@@ -100,19 +101,30 @@ namespace ProyectoBiblioteca
             int sacarID = e.Id;
             var filtrado = controladorUsuario.MuestraUsu(sacarID);
 
-           // MessageBox.Show($"{filtrado}"); 
+            //MessageBox.Show(filtrado[0].Id.ToString());
+
+           
 
             formularioEditarUsuario form = new formularioEditarUsuario();
-            foreach (var usuario in filtrado)
-            {
-                //MessageBox.Show(usuario.Id.ToString());
-                form.lEid.Text = usuario.Id.ToString();
-                form.tbNombre.Text = usuario.Nombre.ToString();
-                form.tbApe1.Text = usuario.Apellido1.ToString();
-                form.tbApe2.Text = usuario.Apellido2.ToString();
-                form.tbTelefono.Text = usuario.Telefono.ToString();
 
-            }
+            form.lEid.Text = filtrado[0].Id.ToString();
+            form.tbNombre.Text = filtrado[0].Nombre.ToString();
+            form.tbApe1.Text = filtrado[0].Apellido1.ToString();
+            form.tbApe2.Text = filtrado[0].Apellido2.ToString();
+            form.tbTelefono.Text = filtrado[0].Telefono.ToString();
+
+            //foreach (var usuario in filtrado)
+            //{
+            //    //MessageBox.Show(usuario.Id.ToString());
+            //    form.lEid.Text = usuario.Id.ToString();
+            //    form.tbNombre.Text = usuario.Nombre.ToString();
+            //    form.tbApe1.Text = usuario.Apellido1.ToString();
+            //    form.tbApe2.Text = usuario.Apellido2.ToString();
+            //    form.tbTelefono.Text = usuario.Telefono.ToString();
+
+            //}
+
+
             this.Hide();
             form.ShowDialog();
             this.Show();
