@@ -132,6 +132,7 @@ namespace ProyectoBiblioteca
                     {
                         MessageBox.Show("No se encontraron libros con el criterio de busqueda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
                     }
                 }
 

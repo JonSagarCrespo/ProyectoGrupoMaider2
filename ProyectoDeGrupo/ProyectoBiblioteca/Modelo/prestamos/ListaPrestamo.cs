@@ -25,5 +25,10 @@ namespace ProyectoBiblioteca.Modelo.Prestamos
             }
             return dataTable;
         }
+
+        public void  agregarPrestamos (int idLibro , int idUsuario , string fecha_Inicio ,string fecha_Fin)
+        {
+
+        }
     }
 }
