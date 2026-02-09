@@ -100,6 +100,8 @@ namespace ProyectoBiblioteca
             int sacarID = e.Id;
             var filtrado = controladorUsuario.MuestraUsu(sacarID);
 
+           // MessageBox.Show($"{filtrado}"); 
+
             formularioEditarUsuario form = new formularioEditarUsuario();
             foreach (var usuario in filtrado)
             {
