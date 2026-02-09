@@ -51,30 +51,17 @@ namespace ProyectoBiblioteca.Modelo
         }
 
 
-        public List<Usuario> SacarUsuarioConID(int id)
+        public DataTable SacarUsuarioConID(int id)
         {
-            List<Usuario> resultado = new List<Usuario>();
+            DataTable resultado = new DataTable();
             SQLiteCommand cmd;
             {
-                
-                    string sql = @"SELECT ID, Nombre, Apellido_1, Apellido_2, Telefono FROM Usuarios WHERE ID = @id";
-                    cmd = new SQLiteCommand(sql);
-                    cmd.Parameters.AddWithValue("@id", id);
-               
 
-                using (SQLiteDataReader dr = Conexion.GetDataReader(ruta, cmd))
-                {
-                    while (dr.Read())
-                    {
-                        resultado.Add(new Usuario(
-                            dr.GetInt32(0),
-                            dr.GetString(1),
-                            dr.GetString(2),
-                            dr.GetString(3),
-                            dr.GetInt32(4)
-                        ));
-                    }
-                }
+                string sql = @"SELECT ID, Nombre, Apellido_1, Apellido_2, Telefono FROM Usuarios WHERE ID = @id";
+                cmd = new SQLiteCommand(sql);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                resultado = Conexion.GetDataTable(ruta, cmd);
             }
             return resultado;
         }

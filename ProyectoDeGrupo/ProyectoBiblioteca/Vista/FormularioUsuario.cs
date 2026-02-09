@@ -107,22 +107,15 @@ namespace ProyectoBiblioteca
 
             formularioEditarUsuario form = new formularioEditarUsuario();
 
-            form.lEid.Text = filtrado[0].Id.ToString();
-            form.tbNombre.Text = filtrado[0].Nombre.ToString();
-            form.tbApe1.Text = filtrado[0].Apellido1.ToString();
-            form.tbApe2.Text = filtrado[0].Apellido2.ToString();
-            form.tbTelefono.Text = filtrado[0].Telefono.ToString();
+            form.lEid.Text = filtrado.Rows[0]["ID"].ToString();
+            form.tbNombre.Text = filtrado.Rows[0]["Nombre"].ToString();
+            form.tbApe1.Text = filtrado.Rows[0]["Apellido_1"].ToString();
+            form.tbApe2.Text = filtrado.Rows[0]["Apellido_2"].ToString();
+            form.tbTelefono.Text = filtrado.Rows[0]["Telefono"].ToString();
 
-            //foreach (var usuario in filtrado)
-            //{
-            //    //MessageBox.Show(usuario.Id.ToString());
-            //    form.lEid.Text = usuario.Id.ToString();
-            //    form.tbNombre.Text = usuario.Nombre.ToString();
-            //    form.tbApe1.Text = usuario.Apellido1.ToString();
-            //    form.tbApe2.Text = usuario.Apellido2.ToString();
-            //    form.tbTelefono.Text = usuario.Telefono.ToString();
 
-            //}
+
+
 
 
             this.Hide();
@@ -134,14 +127,7 @@ namespace ProyectoBiblioteca
         private void Control_Eliminar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
 
-            int sacarID = e.Id;
-            var filtrado = controladorUsuario.MuestraUsu(sacarID);
-
-            foreach (var usuario in filtrado)
-            {
-                MessageBox.Show($"Se eleminara: " + usuario.ToString());
-            }
-
+     
             controladorUsuario.eleminarUsuario(e.Id);
 
             MessageBox.Show($"Usuario eliminado correctamente");

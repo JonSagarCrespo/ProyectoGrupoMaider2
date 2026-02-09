@@ -68,8 +68,6 @@ namespace ProyectoBiblioteca
 
             
 
-
-
             formularioEditarLibro form = new formularioEditarLibro();
             form.controladorEditarLibro = this.controladorLibro;
 
@@ -111,12 +109,6 @@ namespace ProyectoBiblioteca
             Cargar(controladorLibro.CargarDatosLibro());
         }
 
-
-        private void tableLayoutPanelLibros_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -139,7 +131,6 @@ namespace ProyectoBiblioteca
                     else
                     {
                         MessageBox.Show("No se encontraron libros con el criterio de busqueda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 
                     }
                 }

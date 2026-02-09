@@ -44,19 +44,18 @@ namespace ProyectoBiblioteca.Controlador
 
 
 
-        public List<Usuario> MuestraUsu(int id)
-        {
-            List<Usuario> usuarios;
-            usuarios = listaUsuarios.SacarUsuarioConID(id);
-
-            if (usuarios.Count == 0)
-                throw new Exception("No se encontraron usuarios con esos criterios");
-
-            return usuarios;
-        }
+      
         public DataTable CargarDatosUsuario()
         {
             return listaUsuarios.CargarTodo();
+        }
+        public DataTable MuestraUsu(int id)
+        {
+            DataTable datos = new DataTable();
+            datos = listaUsuarios.SacarUsuarioConID(id);
+
+
+            return datos;
         }
 
 
