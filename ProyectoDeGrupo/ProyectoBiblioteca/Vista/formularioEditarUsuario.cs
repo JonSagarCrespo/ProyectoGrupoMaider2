@@ -41,9 +41,18 @@ namespace ProyectoBiblioteca.Vista
             string ape2 = tbApe2.Text;
             int tel = int.Parse(tbTelefono.Text);
 
-            controladorEditarUsuario.EditarUsuario(eId,nom, ape1, ape2, tel);
-            MessageBox.Show($"Se ha editado el usuario {tbNombre.Text}");
-            this.Close();
+            try
+            {
+                controladorEditarUsuario.EditarUsuario(eId, nom, ape1, ape2, tel);
+                MessageBox.Show($"Se ha editado el usuario {tbNombre.Text}");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
             
 
         }

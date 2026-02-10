@@ -1,5 +1,6 @@
 ﻿using ProyectoBiblioteca.Modelo;
 using ProyectoBiblioteca.Modelo.Libro;
+using ProyectoBiblioteca.Modelo.Prestamos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,7 @@ namespace ProyectoBiblioteca.Controlador
     {
         private ListaUsuarios listaUsuarios = new ListaUsuarios();
         private ListaLibros listaLibros = new ListaLibros();
+        private ListaPrestamo listaLibrosDisponibles = new ListaPrestamo();
 
         public void InsertarUsuario(string nombre, string Apellido1, string Apellido2, int telefono)
         {
@@ -43,11 +45,19 @@ namespace ProyectoBiblioteca.Controlador
         }
 
 
+        public DataTable CargarDatosLibrosDisponibles()
+        {
+            return listaLibrosDisponibles.librosDisponibles();
+        }
 
-      
         public DataTable CargarDatosUsuario()
         {
             return listaUsuarios.CargarTodo();
+        }
+
+        public DataTable CargarDatosUsuarioNomYApes()
+        {
+            return listaUsuarios.CargarNombreYApellidos();
         }
         public DataTable MuestraUsu(int id)
         {
@@ -167,5 +177,28 @@ namespace ProyectoBiblioteca.Controlador
 
             listaLibros.EditarLibro(id, titulo, escritor, ano_edicion, sinopsis, disponible);
         }
+
+
+        public void InsertarPrestamos(int idLibro, int idUsuario, string fecha_Inicio, string fecha_Fin)
+        {
+            DateTime dtInicio, dtFin;
+
+            if (!DateTime.TryParse(fecha_Inicio, out dtInicio))
+                throw new Exception("la fecha de inicio no es valido");
+
+            if (!DateTime.TryParse(fecha_Fin, out dtFin))
+                throw new Exception("la fecha del final no es valido");
+
+            if (dtFin < dtInicio)
+                throw new Exception("La fecha final no puede ser anterior a la inicial"); 
+
+            if (idLibro <= 0)
+                throw new Exception("Falta el ID del libro " + Environment.NewLine);
+            if (idUsuario <= 0)
+                throw new Exception("Falta el ID del de usuario " + Environment.NewLine);
+
+            listaLibrosDisponibles.AgregarPrestamos(idLibro, idUsuario, fecha_Inicio, fecha_Fin);
+        }
+
     }
 }

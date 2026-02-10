@@ -7,7 +7,7 @@ namespace ProyectoBiblioteca.Modelo.Libro
     internal class ListaLibros
     {
 
-        private string ruta = Properties.Settings.Default.conexion;
+        private string ruta = Properties.Settings.Default.Conexion;
 
 
 

@@ -38,14 +38,23 @@ namespace ProyectoBiblioteca.Vista
             {
                 valorDisponible = 0;
             }
-            controladorEditarLibro.EditLibro(libroId,
-                    tbTitulo.Text,
-                    tbEscritor.Text,
-                    int.Parse(tbAno_edicion.Text),
-                    tbSinopsis.Text,
-                    valorDisponible);
 
-            MessageBox.Show("Se ha editado el libro correctametne");
+            try
+            {
+                controladorEditarLibro.EditLibro(libroId,
+                   tbTitulo.Text,
+                   tbEscritor.Text,
+                   int.Parse(tbAno_edicion.Text),
+                   tbSinopsis.Text,
+                   valorDisponible);
+
+                MessageBox.Show("Se ha editado el libro correctametne");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             this.Close();
 
         }

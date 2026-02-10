@@ -8,18 +8,26 @@ namespace ProyectoBiblioteca.Modelo
 {
     internal class ListaUsuarios
     {
-        private string ruta = Properties.Settings.Default.conexion;
+        private string ruta = Properties.Settings.Default.Conexion;
 
         public void Agregar(string nombre, string Apellido1, string Apellido2, int telefono)
         {
-            string sql = $"INSERT INTO Usuarios (Nombre,Apellido_1,Apellido_2,Telefono) VALUES ( @{nombre}, @{Apellido1},@{Apellido2},@{telefono})";
+            string sql = "INSERT INTO Usuarios (Nombre,Apellido_1,Apellido_2,Telefono) VALUES (@nombre, @Apellido1,@Apellido2,@telefono)";
             SQLiteCommand cmd = new SQLiteCommand(sql);
-          
-        
+
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@Apellido1", Apellido1);
+            cmd.Parameters.AddWithValue("@Apellido2", Apellido2);
+            cmd.Parameters.AddWithValue("@telefono", telefono);
+
+
             Conexion.Ejecuta(ruta, cmd);
 
 
         }
+
+
+     
 
 
         // filtrar Usuarios
@@ -77,7 +85,16 @@ namespace ProyectoBiblioteca.Modelo
             DataTable datos = new DataTable();
             string sql = "SELECT * FROM Usuarios";
             SQLiteCommand cmd = new SQLiteCommand(sql);
-            datos = Conexion.GetDataTable(Properties.Settings.Default.conexion, cmd);
+            datos = Conexion.GetDataTable(Properties.Settings.Default.Conexion, cmd);
+            return datos;
+        }
+
+        public DataTable CargarNombreYApellidos()
+        {
+            DataTable datos = new DataTable();
+            string sql = "SELECT ID, Nombre || ' ' || Apellido_1 || ' ' || Apellido_2 as Nombre_completo FROM Usuarios";
+            SQLiteCommand cmd = new SQLiteCommand(sql);
+            datos = Conexion.GetDataTable(Properties.Settings.Default.Conexion, cmd);
             return datos;
         }
 

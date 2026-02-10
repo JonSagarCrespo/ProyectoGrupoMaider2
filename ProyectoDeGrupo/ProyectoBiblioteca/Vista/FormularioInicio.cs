@@ -64,7 +64,9 @@ namespace ProyectoBiblioteca
 
         private void menPrestamos_Click(object sender, EventArgs e)
         {
-
+            var form = new FormularioPrestamo();
+            form.controladorPrestamo = this.controladorPricipal;
+            InsertarFormulario(form);
         }
     }
 }

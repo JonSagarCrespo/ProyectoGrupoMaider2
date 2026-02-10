@@ -101,9 +101,6 @@ namespace ProyectoBiblioteca
             int sacarID = e.Id;
             var filtrado = controladorUsuario.MuestraUsu(sacarID);
 
-       
-           
-
             formularioEditarUsuario form = new formularioEditarUsuario();
 
             form.lEid.Text = filtrado.Rows[0]["ID"].ToString();
@@ -111,10 +108,6 @@ namespace ProyectoBiblioteca
             form.tbApe1.Text = filtrado.Rows[0]["Apellido_1"].ToString();
             form.tbApe2.Text = filtrado.Rows[0]["Apellido_2"].ToString();
             form.tbTelefono.Text = filtrado.Rows[0]["Telefono"].ToString();
-
-
-
-
 
 
             this.Hide();
