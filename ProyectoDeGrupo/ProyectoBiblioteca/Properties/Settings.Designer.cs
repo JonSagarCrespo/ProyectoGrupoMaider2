@@ -26,8 +26,8 @@ namespace ProyectoBiblioteca.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = C:\\Users\\sagar\\OneDrive\\Escritorio\\copiaDelaCopia\\ProyectoDeGrupo\\P" +
-            "royectoBiblioteca\\Biblioteca.db; version = 3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = C:\\Users\\Edgar Q\\Desktop\\ssss\\ProyectoGrupoMaider2\\ProyectoDeGrupo\\" +
+            "ProyectoBiblioteca\\Biblioteca.db; version = 3")]
         public string Conexion {
             get {
                 return ((string)(this["Conexion"]));

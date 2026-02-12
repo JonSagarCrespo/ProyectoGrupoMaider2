@@ -50,13 +50,13 @@
             this.tlpPrincipalUsuarios.Controls.Add(this.tableLayoutPanelLibros, 0, 2);
             this.tlpPrincipalUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPrincipalUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.tlpPrincipalUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPrincipalUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpPrincipalUsuarios.Name = "tlpPrincipalUsuarios";
             this.tlpPrincipalUsuarios.RowCount = 3;
-            this.tlpPrincipalUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tlpPrincipalUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpPrincipalUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpPrincipalUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPrincipalUsuarios.Size = new System.Drawing.Size(600, 366);
+            this.tlpPrincipalUsuarios.Size = new System.Drawing.Size(800, 450);
             this.tlpPrincipalUsuarios.TabIndex = 4;
             // 
             // tlpEncabezadoLibros
@@ -70,12 +70,12 @@
             this.tlpEncabezadoLibros.Controls.Add(this.txbBuscarLibro, 1, 0);
             this.tlpEncabezadoLibros.Controls.Add(this.btBuscar, 2, 0);
             this.tlpEncabezadoLibros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEncabezadoLibros.Location = new System.Drawing.Point(2, 2);
-            this.tlpEncabezadoLibros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpEncabezadoLibros.Location = new System.Drawing.Point(3, 2);
+            this.tlpEncabezadoLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpEncabezadoLibros.Name = "tlpEncabezadoLibros";
             this.tlpEncabezadoLibros.RowCount = 1;
             this.tlpEncabezadoLibros.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEncabezadoLibros.Size = new System.Drawing.Size(596, 44);
+            this.tlpEncabezadoLibros.Size = new System.Drawing.Size(794, 55);
             this.tlpEncabezadoLibros.TabIndex = 3;
             // 
             // label1
@@ -84,37 +84,39 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(2, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 16, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Libro: ";
             // 
             // txbBuscarLibro
             // 
-            this.txbBuscarLibro.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbBuscarLibro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txbBuscarLibro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbBuscarLibro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txbBuscarLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscarLibro.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txbBuscarLibro.Location = new System.Drawing.Point(102, 16);
-            this.txbBuscarLibro.Margin = new System.Windows.Forms.Padding(2, 16, 2, 16);
+            this.txbBuscarLibro.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbBuscarLibro.Location = new System.Drawing.Point(125, 20);
+            this.txbBuscarLibro.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
             this.txbBuscarLibro.Name = "txbBuscarLibro";
-            this.txbBuscarLibro.Size = new System.Drawing.Size(291, 17);
+            this.txbBuscarLibro.Size = new System.Drawing.Size(394, 21);
             this.txbBuscarLibro.TabIndex = 1;
             this.txbBuscarLibro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btBuscar
             // 
+            this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuscar.BackColor = System.Drawing.Color.IndianRed;
-            this.btBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btBuscar.Location = new System.Drawing.Point(405, 11);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.btBuscar.Location = new System.Drawing.Point(535, 14);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(13, 14, 13, 14);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(181, 39);
+            this.btBuscar.Size = new System.Drawing.Size(246, 33);
             this.btBuscar.TabIndex = 2;
             this.btBuscar.Text = "Search";
             this.btBuscar.UseVisualStyleBackColor = false;
@@ -128,12 +130,12 @@
             this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpSecundarioUsuarios.Controls.Add(this.btAgregar, 2, 0);
             this.tlpSecundarioUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSecundarioUsuarios.Location = new System.Drawing.Point(2, 50);
-            this.tlpSecundarioUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSecundarioUsuarios.Location = new System.Drawing.Point(3, 61);
+            this.tlpSecundarioUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpSecundarioUsuarios.Name = "tlpSecundarioUsuarios";
             this.tlpSecundarioUsuarios.RowCount = 1;
-            this.tlpSecundarioUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tlpSecundarioUsuarios.Size = new System.Drawing.Size(596, 59);
+            this.tlpSecundarioUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tlpSecundarioUsuarios.Size = new System.Drawing.Size(794, 73);
             this.tlpSecundarioUsuarios.TabIndex = 1;
             // 
             // btAgregar
@@ -142,11 +144,11 @@
             this.btAgregar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btAgregar.Location = new System.Drawing.Point(406, 11);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.btAgregar.Location = new System.Drawing.Point(541, 14);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(13, 14, 13, 14);
             this.btAgregar.Name = "btAgregar";
-            this.btAgregar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btAgregar.Size = new System.Drawing.Size(180, 37);
+            this.btAgregar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAgregar.Size = new System.Drawing.Size(240, 45);
             this.btAgregar.TabIndex = 0;
             this.btAgregar.Text = "Añadir";
             this.btAgregar.UseVisualStyleBackColor = false;
@@ -157,21 +159,22 @@
             this.tableLayoutPanelLibros.ColumnCount = 1;
             this.tableLayoutPanelLibros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelLibros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelLibros.Location = new System.Drawing.Point(3, 114);
+            this.tableLayoutPanelLibros.Location = new System.Drawing.Point(4, 140);
+            this.tableLayoutPanelLibros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanelLibros.Name = "tableLayoutPanelLibros";
             this.tableLayoutPanelLibros.RowCount = 1;
             this.tableLayoutPanelLibros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelLibros.Size = new System.Drawing.Size(594, 249);
+            this.tableLayoutPanelLibros.Size = new System.Drawing.Size(792, 306);
             this.tableLayoutPanelLibros.TabIndex = 2;
             // 
             // FormularioLibros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tlpPrincipalUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormularioLibros";
             this.Text = "FormularioLibros";
             this.Load += new System.EventHandler(this.FormularioLibros_Load);
