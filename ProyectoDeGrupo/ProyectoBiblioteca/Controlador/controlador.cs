@@ -193,9 +193,9 @@ namespace ProyectoBiblioteca.Controlador
                 throw new Exception("La fecha final no puede ser anterior a la inicial"); 
 
             if (idLibro <= 0)
-                throw new Exception("Falta el ID del libro " + Environment.NewLine);
+                throw new Exception("Falta seleccionar un libro " + Environment.NewLine);
             if (idUsuario <= 0)
-                throw new Exception("Falta el ID del de usuario " + Environment.NewLine);
+                throw new Exception("Falta seleccionar un usuario " + Environment.NewLine);
 
             listaLibrosDisponibles.AgregarPrestamos(idLibro, idUsuario, fecha_Inicio, fecha_Fin);
         }

@@ -50,7 +50,11 @@
             this.tlpPrincipalUsuarios.Controls.Add(this.tableLayoutPanelLibros, 0, 2);
             this.tlpPrincipalUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPrincipalUsuarios.Location = new System.Drawing.Point(0, 0);
+<<<<<<< HEAD
             this.tlpPrincipalUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.tlpPrincipalUsuarios.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> d3570de (actualizar libro y eliminar prestamo)
             this.tlpPrincipalUsuarios.Name = "tlpPrincipalUsuarios";
             this.tlpPrincipalUsuarios.RowCount = 3;
             this.tlpPrincipalUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
@@ -70,8 +74,13 @@
             this.tlpEncabezadoLibros.Controls.Add(this.txbBuscarLibro, 1, 0);
             this.tlpEncabezadoLibros.Controls.Add(this.btBuscar, 2, 0);
             this.tlpEncabezadoLibros.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.tlpEncabezadoLibros.Location = new System.Drawing.Point(3, 2);
             this.tlpEncabezadoLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.tlpEncabezadoLibros.Location = new System.Drawing.Point(2, 2);
+            this.tlpEncabezadoLibros.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> d3570de (actualizar libro y eliminar prestamo)
             this.tlpEncabezadoLibros.Name = "tlpEncabezadoLibros";
             this.tlpEncabezadoLibros.RowCount = 1;
             this.tlpEncabezadoLibros.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -130,8 +139,13 @@
             this.tlpSecundarioUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpSecundarioUsuarios.Controls.Add(this.btAgregar, 2, 0);
             this.tlpSecundarioUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.tlpSecundarioUsuarios.Location = new System.Drawing.Point(3, 61);
             this.tlpSecundarioUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.tlpSecundarioUsuarios.Location = new System.Drawing.Point(2, 50);
+            this.tlpSecundarioUsuarios.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> d3570de (actualizar libro y eliminar prestamo)
             this.tlpSecundarioUsuarios.Name = "tlpSecundarioUsuarios";
             this.tlpSecundarioUsuarios.RowCount = 1;
             this.tlpSecundarioUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
@@ -147,8 +161,13 @@
             this.btAgregar.Location = new System.Drawing.Point(541, 14);
             this.btAgregar.Margin = new System.Windows.Forms.Padding(13, 14, 13, 14);
             this.btAgregar.Name = "btAgregar";
+<<<<<<< HEAD
             this.btAgregar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAgregar.Size = new System.Drawing.Size(240, 45);
+=======
+            this.btAgregar.Padding = new System.Windows.Forms.Padding(2);
+            this.btAgregar.Size = new System.Drawing.Size(180, 37);
+>>>>>>> d3570de (actualizar libro y eliminar prestamo)
             this.btAgregar.TabIndex = 0;
             this.btAgregar.Text = "Añadir";
             this.btAgregar.UseVisualStyleBackColor = false;
@@ -174,7 +193,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tlpPrincipalUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> d3570de (actualizar libro y eliminar prestamo)
             this.Name = "FormularioLibros";
             this.Text = "FormularioLibros";
             this.Load += new System.EventHandler(this.FormularioLibros_Load);

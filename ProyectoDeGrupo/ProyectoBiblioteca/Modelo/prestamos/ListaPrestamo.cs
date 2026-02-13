@@ -39,6 +39,30 @@ namespace ProyectoBiblioteca.Modelo.Prestamos
 
 
             Conexion.Ejecuta(ruta, cmd);
+
+
+            sql = "UPDATE Libros SET Disponible = 0 WHERE ID = @idLibro";
+            cmd = new SQLiteCommand(sql);
+            cmd.Parameters.AddWithValue("@idLibro", idLibro);
+            Conexion.Ejecuta(ruta, cmd);
+
+
+        }
+
+
+        public void EliminarPrestamo(int idPrestmo, int idLibro)
+        {
+            string sql = "DELETE FROM Libros WHERE ID = @idPrestamo"; 
+            SQLiteCommand cmd = new SQLiteCommand(sql);
+
+            Conexion.Ejecuta(ruta, cmd);
+
+            sql = "UPDATE Libros SET Disponible = 1 WHERE ID = @idLibro"; 
+            cmd = new SQLiteCommand(sql);
+            cmd.Parameters.AddWithValue("@idLibro", idLibro);
+            Conexion.Ejecuta(ruta, cmd);
+
+
         }
     }
 }

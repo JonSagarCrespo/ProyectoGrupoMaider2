@@ -36,8 +36,8 @@
             this.tlpFecha_Inicio = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
-            this.btAgregarPrestamo = new System.Windows.Forms.Button();
             this.cbbInicio = new System.Windows.Forms.ComboBox();
+            this.btAgregarPrestamo = new System.Windows.Forms.Button();
             this.tlpPrestamo = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPrincipalPrestamo.SuspendLayout();
             this.tlpFecha_Fin.SuspendLayout();
@@ -142,17 +142,6 @@
             this.dtpInicio.Size = new System.Drawing.Size(225, 20);
             this.dtpInicio.TabIndex = 1;
             // 
-            // btAgregarPrestamo
-            // 
-            this.tlpPrincipalPrestamo.SetColumnSpan(this.btAgregarPrestamo, 2);
-            this.btAgregarPrestamo.Location = new System.Drawing.Point(3, 69);
-            this.btAgregarPrestamo.Name = "btAgregarPrestamo";
-            this.btAgregarPrestamo.Size = new System.Drawing.Size(582, 23);
-            this.btAgregarPrestamo.TabIndex = 1;
-            this.btAgregarPrestamo.Text = "Crear Prestamo";
-            this.btAgregarPrestamo.UseVisualStyleBackColor = true;
-            this.btAgregarPrestamo.Click += new System.EventHandler(this.button1_Click);
-            // 
             // cbbInicio
             // 
             this.cbbInicio.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -161,6 +150,18 @@
             this.cbbInicio.Name = "cbbInicio";
             this.cbbInicio.Size = new System.Drawing.Size(288, 21);
             this.cbbInicio.TabIndex = 3;
+            // 
+            // btAgregarPrestamo
+            // 
+            this.tlpPrincipalPrestamo.SetColumnSpan(this.btAgregarPrestamo, 2);
+            this.btAgregarPrestamo.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.btAgregarPrestamo.Location = new System.Drawing.Point(3, 69);
+            this.btAgregarPrestamo.Name = "btAgregarPrestamo";
+            this.btAgregarPrestamo.Size = new System.Drawing.Size(582, 23);
+            this.btAgregarPrestamo.TabIndex = 1;
+            this.btAgregarPrestamo.Text = "Crear Prestamo";
+            this.btAgregarPrestamo.UseVisualStyleBackColor = true;
+            this.btAgregarPrestamo.Click += new System.EventHandler(this.button1_Click);
             // 
             // tlpPrestamo
             // 
