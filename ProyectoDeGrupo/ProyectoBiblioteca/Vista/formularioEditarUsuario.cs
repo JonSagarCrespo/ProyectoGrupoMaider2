@@ -1,22 +1,15 @@
-﻿using ProyectoBiblioteca.Controlador;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Controlador;
 
 namespace ProyectoBiblioteca.Vista
 {
     public partial class formularioEditarUsuario : Form
     {
-        
 
-      
-        public controlador controladorEditarUsuario{ get; set; }
+
+
+        public controlador controladorEditarUsuario { get; set; }
         public formularioEditarUsuario()
         {
             InitializeComponent();
@@ -29,7 +22,7 @@ namespace ProyectoBiblioteca.Vista
         private void formularioEditarUsuario_Load(object sender, EventArgs e)
         {
 
-          // tbApe1.Text = 
+            // tbApe1.Text = 
 
         }
 
@@ -52,8 +45,8 @@ namespace ProyectoBiblioteca.Vista
                 MessageBox.Show(ex.Message);
             }
 
-            
-            
+
+
 
         }
 

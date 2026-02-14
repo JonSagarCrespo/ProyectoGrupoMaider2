@@ -1,7 +1,7 @@
-﻿using ProyectoBiblioteca.Controlador;
-using ProyectoBiblioteca.Vista;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Controlador;
+using ProyectoBiblioteca.Vista;
 
 namespace ProyectoBiblioteca
 {
@@ -46,7 +46,7 @@ namespace ProyectoBiblioteca
             var form = new FormularioUsuario();
             form.controladorUsuario = this.controladorPricipal;
             InsertarFormulario(form);
-            
+
 
         }
 

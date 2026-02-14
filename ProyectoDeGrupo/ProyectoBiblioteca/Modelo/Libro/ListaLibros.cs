@@ -31,10 +31,10 @@ namespace ProyectoBiblioteca.Modelo.Libro
 
             List<Libro> Resultadolibros = new List<Libro>();
             SQLiteCommand cmd;
-           
-                cmd = new SQLiteCommand("SELECT * FROM Libros WHERE ID = @id ");
-                cmd.Parameters.AddWithValue("@id", id);
-           
+
+            cmd = new SQLiteCommand("SELECT * FROM Libros WHERE ID = @id ");
+            cmd.Parameters.AddWithValue("@id", id);
+
             using (SQLiteDataReader reader = Conexion.GetDataReader(ruta, cmd))
             {
                 while (reader.Read())
@@ -124,7 +124,7 @@ namespace ProyectoBiblioteca.Modelo.Libro
 
 
 
-        public void EditarLibro(int id, string titulo, string escritor, int ano_edicion , string sinopsis, int disponible)
+        public void EditarLibro(int id, string titulo, string escritor, int ano_edicion, string sinopsis, int disponible)
         {
             string sql = "UPDATE Libros SET Titulo=@titulo, Escritor=@escritor, Ano_Edicion=@ano_edicion, Sinopsis=@sinopsis, Disponible=@disponible WHERE ID=@id";
             SQLiteCommand cmd = new SQLiteCommand(sql);

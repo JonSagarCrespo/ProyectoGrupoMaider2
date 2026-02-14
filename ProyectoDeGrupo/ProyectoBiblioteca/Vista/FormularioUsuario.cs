@@ -1,10 +1,8 @@
-﻿using ProyectoBiblioteca.Controlador;
-using ProyectoBiblioteca.Modelo;
-using ProyectoBiblioteca.Vista;
-using System;
+﻿using System;
 using System.Data;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Controlador;
+using ProyectoBiblioteca.Vista;
 
 namespace ProyectoBiblioteca
 {
@@ -16,7 +14,7 @@ namespace ProyectoBiblioteca
         {
 
             InitializeComponent();
-           
+
         }
 
 
@@ -87,7 +85,7 @@ namespace ProyectoBiblioteca
                 panelUsuarios.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
                 panelUsuarios.Controls.Add(control, 0, nuevaFila);
-                
+
 
                 nuevaFila++;
             }
@@ -119,7 +117,7 @@ namespace ProyectoBiblioteca
         private void Control_Eliminar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
 
-     
+
             controladorUsuario.eleminarUsuario(e.Id);
 
             MessageBox.Show($"Usuario eliminado correctamente");

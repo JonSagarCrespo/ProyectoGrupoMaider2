@@ -1,11 +1,9 @@
-﻿using ProyectoBiblioteca.Modelo;
-using ProyectoBiblioteca.Modelo.Libro;
-using ProyectoBiblioteca.Modelo.Prestamos;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Linq;
-using System.Windows.Forms;
+using ProyectoBiblioteca.Modelo;
+using ProyectoBiblioteca.Modelo.Libro;
+using ProyectoBiblioteca.Modelo.Prestamos;
 
 
 namespace ProyectoBiblioteca.Controlador
@@ -14,25 +12,20 @@ namespace ProyectoBiblioteca.Controlador
     {
         private ListaUsuarios listaUsuarios = new ListaUsuarios();
         private ListaLibros listaLibros = new ListaLibros();
-        private ListaPrestamo listaLibrosDisponibles = new ListaPrestamo();
+        private ListaPrestamo listaPrestamos = new ListaPrestamo();
 
         public void InsertarUsuario(string nombre, string Apellido1, string Apellido2, int telefono)
         {
-            string errores = "";
+            string telefonoTexto = telefono.ToString();
 
             if (nombre.Trim().Length == 0)
-                errores += "Falta el nombre" + Environment.NewLine;
+                throw new Exception(" el nombre no puede estar vacio");
 
             if (Apellido1.Trim().Length == 0)
-                errores += "Falta el primer apellido" + Environment.NewLine;
+                throw new Exception("Falta el primer Apellido");
 
-            if (telefono <= 9)
-
-                errores += "formato de telefono no valido " + Environment.NewLine;
-
-
-            if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
-                throw new Exception(errores);
+            if (telefonoTexto.Length < 9)
+                throw new Exception("formato de telefono no valido");
 
             listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
         }
@@ -47,7 +40,7 @@ namespace ProyectoBiblioteca.Controlador
 
         public DataTable CargarDatosLibrosDisponibles()
         {
-            return listaLibrosDisponibles.librosDisponibles();
+            return listaPrestamos.librosDisponibles();
         }
 
         public DataTable CargarDatosUsuario()
@@ -71,21 +64,31 @@ namespace ProyectoBiblioteca.Controlador
 
         public void EditarUsuario(int id, string nombre, string Apellido1, string Apellido2, int telefono)
         {
-            string errores = "";
+
+
+            string telefonoTexto = telefono.ToString();
 
             if (nombre.Trim().Length == 0)
-                errores += "Falta el nombre" + Environment.NewLine;
+                throw new Exception(" el nombre no puede estar vacio");
 
             if (Apellido1.Trim().Length == 0)
-                errores += "Falta el primer apellido" + Environment.NewLine;
+                throw new Exception("Falta el primer Apellido");
+         
 
-            if (telefono <= 9)
+            if (telefonoTexto.Length == 9 && telefonoTexto.All(char.IsDigit))
+            {
+                int telefonoNumero = int.Parse(telefonoTexto);
+                throw new Exception("Teléfono válido");
+            }
+            else
+            {
+                throw new Exception("Teléfono no válido");
+            }
 
-                errores += "falta numero de telefono " + Environment.NewLine;
+            if (telefonoTexto.Length < 9)
+                throw new Exception("formato de telefono no valido");
 
 
-            if (!string.IsNullOrEmpty(errores)) // si el error es de¡iferente de nulo  vacio entra el error 
-                throw new Exception(errores);
 
 
             listaUsuarios.EditUsuario(id, nombre, Apellido1, Apellido2, telefono);
@@ -155,11 +158,14 @@ namespace ProyectoBiblioteca.Controlador
 
         public void InsertarLibro(string titulo, string escritor, int ano_edicion, string sinopsis, int disponible)
         {
+            string anoTexto = ano_edicion.ToString();
             if (titulo.Trim().Length == 0)
                 throw new Exception("Falta el titulo" + Environment.NewLine);
             if (escritor.Trim().Length == 0)
                 throw new Exception("Falta el escritor" + Environment.NewLine);
-            if (ano_edicion <= 0)
+            if (anoTexto.Length < 4)
+                throw new Exception(" ERROR Año debe ser: 0000 , Formato introducido no valido " + Environment.NewLine);
+            if (anoTexto.Trim().Length == 0)
                 throw new Exception("Falta el año de edicion " + Environment.NewLine);
 
             listaLibros.AgregarLibros(titulo, escritor, ano_edicion, sinopsis, disponible);
@@ -168,16 +174,34 @@ namespace ProyectoBiblioteca.Controlador
 
         public void EditLibro(int id, string titulo, string escritor, int ano_edicion, string sinopsis, int disponible)
         {
+            string anoTexto = ano_edicion.ToString();
+
             if (titulo.Trim().Length == 0)
                 throw new Exception("Falta el titulo" + Environment.NewLine);
             if (escritor.Trim().Length == 0)
                 throw new Exception("Falta el escritor" + Environment.NewLine);
-            if (ano_edicion <= 0)
+            if (anoTexto.Length < 4)
+                throw new Exception(" ERROR Año debe ser: 0000 , Formato introducido no valido " + Environment.NewLine);
+            if (anoTexto.Trim().Length == 0)
                 throw new Exception("Falta el año de edicion " + Environment.NewLine);
 
             listaLibros.EditarLibro(id, titulo, escritor, ano_edicion, sinopsis, disponible);
         }
 
+
+
+
+        // CONTROLADOR PRESTAMO 
+
+        public void EliminarPrestamo(int idPrestamo, int idLibro)
+        {
+            if (idPrestamo <= 0)
+                throw new Exception("Falta seleccionar un prestamo " + Environment.NewLine);
+            if (idLibro <= 0)
+                throw new Exception("Falta seleccionar un libro " + Environment.NewLine);
+
+            listaPrestamos.EliminarPrestamo(idPrestamo, idLibro);
+        }
 
         public void InsertarPrestamos(int idLibro, int idUsuario, string fecha_Inicio, string fecha_Fin)
         {
@@ -190,15 +214,19 @@ namespace ProyectoBiblioteca.Controlador
                 throw new Exception("la fecha del final no es valido");
 
             if (dtFin < dtInicio)
-                throw new Exception("La fecha final no puede ser anterior a la inicial"); 
+                throw new Exception("La fecha final no puede ser anterior a la inicial");
 
-            if (idLibro <= 0)
+            if (idLibro < 0)
                 throw new Exception("Falta seleccionar un libro " + Environment.NewLine);
-            if (idUsuario <= 0)
+            if (idUsuario < 0)
                 throw new Exception("Falta seleccionar un usuario " + Environment.NewLine);
 
-            listaLibrosDisponibles.AgregarPrestamos(idLibro, idUsuario, fecha_Inicio, fecha_Fin);
+            listaPrestamos.AgregarPrestamos(idLibro, idUsuario, fecha_Inicio, fecha_Fin);
         }
 
+        public DataTable CargarDatosPrestamos()
+        {
+            return listaPrestamos.tablaPrestamos();
+        }
     }
 }

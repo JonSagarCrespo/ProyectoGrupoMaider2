@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoBiblioteca.Modelo.Prestamos
 {
@@ -26,7 +21,22 @@ namespace ProyectoBiblioteca.Modelo.Prestamos
             return dataTable;
         }
 
-        public void  AgregarPrestamos (int idLibro , int idUsuario , string fecha_Inicio ,string fecha_Fin)
+        public DataTable tablaPrestamos()
+        {
+
+            DataTable dataTable = new DataTable();
+            SQLiteCommand cmd;
+            {
+                string sql = "select p.ID, l.Titulo, u.Nombre from  Prestamos p,Libros l, Usuarios u where p.ID_Libro = l.ID and p.ID_Usuario=u.ID";
+                cmd = new SQLiteCommand(sql);
+                dataTable = Conexion.GetDataTable(Properties.Settings.Default.Conexion, cmd);
+
+            }
+            return dataTable;
+        }
+
+
+        public void AgregarPrestamos(int idLibro, int idUsuario, string fecha_Inicio, string fecha_Fin)
         {
             string sql = "INSERT INTO Prestamos (ID_Libro,ID_Usuario,Fecha_Inicio,Fecha_fin) VALUES ( @idLibro, @idUsuario,@fecha_Inicio,@fecha_Fin)";
             SQLiteCommand cmd = new SQLiteCommand(sql);
@@ -52,12 +62,12 @@ namespace ProyectoBiblioteca.Modelo.Prestamos
 
         public void EliminarPrestamo(int idPrestmo, int idLibro)
         {
-            string sql = "DELETE FROM Libros WHERE ID = @idPrestamo"; 
+            string sql = "DELETE FROM Libros WHERE ID = @idPrestamo";
             SQLiteCommand cmd = new SQLiteCommand(sql);
 
             Conexion.Ejecuta(ruta, cmd);
 
-            sql = "UPDATE Libros SET Disponible = 1 WHERE ID = @idLibro"; 
+            sql = "UPDATE Libros SET Disponible = 1 WHERE ID = @idLibro";
             cmd = new SQLiteCommand(sql);
             cmd.Parameters.AddWithValue("@idLibro", idLibro);
             Conexion.Ejecuta(ruta, cmd);

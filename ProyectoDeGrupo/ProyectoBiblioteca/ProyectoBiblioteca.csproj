@@ -200,6 +200,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\controlUsuarioPrestamos\controlUsuarioPrestamos\controlUsuarioPrestamos.csproj">
+      <Project>{4ff91e32-129d-4bde-b0ef-f7625cb858b8}</Project>
+      <Name>controlUsuarioPrestamos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ControlUsuarioProyecto\ControlUsuarioProyecto\ControlUsuarioProyecto.csproj">
       <Project>{36ef33b8-d7ca-40d7-8f57-627965174310}</Project>
       <Name>ControlUsuarioProyecto</Name>

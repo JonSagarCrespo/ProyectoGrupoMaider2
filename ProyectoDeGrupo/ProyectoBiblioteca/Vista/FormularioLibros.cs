@@ -1,9 +1,8 @@
-﻿using ProyectoBiblioteca.Controlador;
-using ProyectoBiblioteca.Modelo.Libro;
-using ProyectoBiblioteca.Vista;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Controlador;
+using ProyectoBiblioteca.Vista;
 
 namespace ProyectoBiblioteca
 {
@@ -18,7 +17,7 @@ namespace ProyectoBiblioteca
 
         private void FormularioLibros_Load(object sender, EventArgs e)
         {
-     
+
         }
 
         private void smiInsertar_Click(object sender, EventArgs e)
@@ -34,7 +33,7 @@ namespace ProyectoBiblioteca
             tableLayoutPanelLibros.RowStyles.Clear();
             tableLayoutPanelLibros.RowCount = 0;
 
-          tableLayoutPanelLibros.AutoScroll = true;
+            tableLayoutPanelLibros.AutoScroll = true;
 
 
             int nuevaFila = 0;
@@ -42,19 +41,19 @@ namespace ProyectoBiblioteca
             foreach (DataRow row in datos.Rows)
             {
                 ControlUsuarioProyecto.ControlUsuario control = new ControlUsuarioProyecto.ControlUsuario();
-                control.tipo = ControlUsuarioProyecto.ControlUsuario.TipoEntidad.Libro; //importante hay que elegir el tipo de entidad.
+
                 control.Id = (int)row.Field<long>("id");
                 control.Nombre = row.Field<string>("Titulo");
                 control.Apellido = row.Field<string>("Escritor");
                 control.Eliminar += Control_Eliminar;
-                control.Editar += Control_Editar; 
+                control.Editar += Control_Editar;
                 control.Dock = DockStyle.Top;
                 control.Dock = DockStyle.Top;
 
                 tableLayoutPanelLibros.RowCount++;
                 tableLayoutPanelLibros.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-              tableLayoutPanelLibros.Controls.Add(control, 0, nuevaFila);
+                tableLayoutPanelLibros.Controls.Add(control, 0, nuevaFila);
 
                 nuevaFila++;
             }
@@ -66,7 +65,7 @@ namespace ProyectoBiblioteca
             int sacarID = e.Id;
             MessageBox.Show($"{sacarID}");
 
-            
+
 
             formularioEditarLibro form = new formularioEditarLibro();
             form.controladorEditarLibro = this.controladorLibro;
@@ -93,10 +92,10 @@ namespace ProyectoBiblioteca
 
         }
 
-    
 
 
-   
+
+
 
         private void btAgregar_Click(object sender, EventArgs e)
         {

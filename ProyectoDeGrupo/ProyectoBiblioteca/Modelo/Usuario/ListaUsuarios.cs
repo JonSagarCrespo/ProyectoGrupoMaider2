@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
-using System.Windows.Forms;
-using ProyectoBiblioteca.Controlador; 
 
 namespace ProyectoBiblioteca.Modelo
 {
@@ -27,7 +24,7 @@ namespace ProyectoBiblioteca.Modelo
         }
 
 
-     
+
 
 
         // filtrar Usuarios
@@ -51,9 +48,9 @@ namespace ProyectoBiblioteca.Modelo
 
                 datos = Conexion.GetDataTable(ruta, cmd);
             }
-            
+
             return datos;
-           
+
         }
 
 
@@ -111,7 +108,7 @@ namespace ProyectoBiblioteca.Modelo
             cmd.Parameters.Add("@tel", DbType.Int32).Value = telefono;
 
             Conexion.Ejecuta(ruta, cmd);
-            
+
 
         }
 

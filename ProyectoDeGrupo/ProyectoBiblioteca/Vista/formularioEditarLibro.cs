@@ -1,19 +1,12 @@
-﻿using ProyectoBiblioteca.Controlador;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Controlador;
 
 namespace ProyectoBiblioteca.Vista
 {
     public partial class formularioEditarLibro : Form
     {
-       public controlador controladorEditarLibro { get; set; }
+        public controlador controladorEditarLibro { get; set; }
         public formularioEditarLibro()
         {
             InitializeComponent();
@@ -28,11 +21,11 @@ namespace ProyectoBiblioteca.Vista
         private void btEditar_Click(object sender, EventArgs e)
         {
             int libroId = int.Parse(lEidLibro.Text);
-            int valorDisponible = 1; 
+            int valorDisponible = 1;
 
             if (chbDisponible.Checked)
             {
-                valorDisponible = 1; 
+                valorDisponible = 1;
             }
             else
             {

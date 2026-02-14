@@ -1,13 +1,6 @@
-﻿using ProyectoBiblioteca.Controlador;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using ProyectoBiblioteca.Controlador;
 
 namespace ProyectoBiblioteca.Vista
 {
@@ -43,10 +36,10 @@ namespace ProyectoBiblioteca.Vista
 
         private void btLimpiar_Click(object sender, EventArgs e)
         {
-            tbNombre.Text = ""; 
-            tbApe1.Text = ""; 
-            tbApe2.Text = ""; 
-            tbTelefono.Text = ""; 
+            tbNombre.Text = "";
+            tbApe1.Text = "";
+            tbApe2.Text = "";
+            tbTelefono.Text = "";
         }
 
     }

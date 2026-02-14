@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ControlUsuarioProyecto
@@ -7,17 +6,10 @@ namespace ControlUsuarioProyecto
     public partial class ControlUsuario : UserControl
     {
 
-        public enum TipoEntidad { Usuario, Libro }
-        public TipoEntidad tipo { get; set; }
 
         public ControlUsuario()
         {
             InitializeComponent();
-        }
-        public override Size MinimumSize
-        {
-            get => base.MinimumSize;
-            set => base.MinimumSize = new Size(560, 60);
         }
 
         public int Id
@@ -36,13 +28,7 @@ namespace ControlUsuarioProyecto
             set => txtApellido.Text = value;
         }
 
-        public bool Seleccionar
-        {
-            get => ckSeleccionar.Checked;
-            set => ckSeleccionar.Checked = value;
 
-
-        }
         private int id;
         public class ClickarBotonSeleccionarEventArgs : EventArgs
         {
@@ -51,22 +37,16 @@ namespace ControlUsuarioProyecto
             {
                 Id = id;
             }
-     
+
         }
         public event EventHandler<ClickarBotonSeleccionarEventArgs> Editar;
 
-      
+
 
         public event EventHandler<ClickarBotonSeleccionarEventArgs> Eliminar;
 
-        
 
 
-    
-
-    
-
-   
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
