@@ -15,6 +15,20 @@ namespace ProyectoBiblioteca.Vista
         {
             InitializeComponent();
         }
+        private void RefrescarLibrosDisponibles()
+        {
+
+            DataTable dtLibros = controladorPrestamo.CargarDatosLibrosDisponibles();
+
+            cbLibro.DataSource = null; // 👈 importante
+            cbLibro.DataSource = dtLibros;
+
+            cbLibro.DisplayMember = "Titulo";
+            cbLibro.ValueMember = "ID";
+
+            cbLibro.SelectedIndex = -1;
+           
+        }
 
 
 
@@ -60,8 +74,10 @@ namespace ProyectoBiblioteca.Vista
 
         {
             controladorPrestamo.EliminarPrestamo(e.Id);
-         MessageBox.Show($"Prestamo eliminado correctamente{e.Id}");
-            Cargar(controladorPrestamo.CargarDatosPrestamos());
+            MessageBox.Show($"El prestamo ha sido devuelto correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            Cargar(controladorPrestamo.CargarDatosPrestamos()); 
+            RefrescarLibrosDisponibles();
+
         }
 
         
@@ -69,10 +85,11 @@ namespace ProyectoBiblioteca.Vista
 
         private void FormularioPrestamo_Load_1(object sender, EventArgs e)
         {
-            DataTable dtLibrosDisponibles = controladorPrestamo.CargarDatosLibrosDisponibles();
-            DataTable dtUsuarios = controladorPrestamo.CargarDatosUsuarioNomYApes();
-            Cargar(controladorPrestamo.CargarDatosPrestamos());
+          
 
+            DataTable dtLibrosDisponibles = controladorPrestamo.CargarDatosLibrosDisponibles();
+            
+            DataTable dtUsuarios = controladorPrestamo.CargarDatosUsuarioNomYApes();
 
             //COMPLETAMENTE VALIDO PERO MEJOR DEL OTRO MODO HABLADO EN CLASE
             /*cbbInicio.Items.Clear();
@@ -107,7 +124,8 @@ namespace ProyectoBiblioteca.Vista
             cbbUsuario.DisplayMember = "Nombre_completo";   // lo que se ve
             cbbUsuario.ValueMember = "ID";  // lo que se guarda
             cbbUsuario.SelectedIndex = -1;
-
+            Cargar(controladorPrestamo.CargarDatosPrestamos()); 
+          
 
         }
 
@@ -127,14 +145,9 @@ namespace ProyectoBiblioteca.Vista
                 MessageBox.Show("Selecciona un usuario y un libro antes de continuar.");
                 return;
             }*/
-
-            MessageBox.Show("Libro seleccionado: " + cbLibro.SelectedValue);
       
-            int idLibro = Convert.ToInt32(cbLibro.SelectedValue);
-           
-
-   
-            int idUsuario = Convert.ToInt32(cbbUsuario.SelectedValue);
+               int idLibro = Convert.ToInt32(cbLibro.SelectedValue);
+               int idUsuario = Convert.ToInt32(cbbUsuario.SelectedValue);
 
             /*// Obtener valores visibles
             string tituloLibro = libroSeleccionado["Titulo"].ToString();
@@ -145,13 +158,15 @@ namespace ProyectoBiblioteca.Vista
             try
             { if (cbbUsuario.SelectedValue != null && cbLibro.SelectedValue !=null) {
                     controladorPrestamo.InsertarPrestamos(idLibro, idUsuario, fechaInicio, fechaFin);
-                    throw new Exception($" {cbbUsuario.DisplayMember.ToString()} Se ha creado un prestamos correctamente" );
-                  
+                    MessageBox.Show($" {cbbUsuario.Text} ha creado un prestamo correctamente ", "Informacion" , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cargar(controladorPrestamo.CargarDatosPrestamos());
+                    RefrescarLibrosDisponibles();
+                   
                 }
                 else
                 {
-                    throw new Exception(" ERROR ,Debes seleccionar tanto libro como usuario");
-                }
+                    MessageBox.Show(" ERROR ,Debes seleccionar tanto libro como usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
 
             
             }
@@ -159,9 +174,19 @@ namespace ProyectoBiblioteca.Vista
             {
                 MessageBox.Show(ex.Message);
             }
+           
 
         }
 
-  
+        private void cbLibro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbLibro.Text = "Seleccionar Libro";
+         
+        }
+
+        private void cbbUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbbUsuario.Text = "Seleccionar Usuario";
+        }
     }
 }

@@ -77,6 +77,7 @@
             this.cbbUsuario.Size = new System.Drawing.Size(384, 24);
             this.cbbUsuario.TabIndex = 4;
             this.cbbUsuario.Text = "Seleccionar Usuario";
+            this.cbbUsuario.SelectedIndexChanged += new System.EventHandler(this.cbbUsuario_SelectedIndexChanged);
             // 
             // tlpFecha_Fin
             // 
@@ -167,6 +168,7 @@
             this.cbLibro.Size = new System.Drawing.Size(384, 24);
             this.cbLibro.TabIndex = 3;
             this.cbLibro.Text = "Seleccionar Libro";
+            this.cbLibro.SelectedIndexChanged += new System.EventHandler(this.cbLibro_SelectedIndexChanged);
             // 
             // btAgregarPrestamo
             // 

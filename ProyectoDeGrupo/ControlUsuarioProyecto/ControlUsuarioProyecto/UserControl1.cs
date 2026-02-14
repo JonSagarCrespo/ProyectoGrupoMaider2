@@ -69,6 +69,10 @@ namespace ControlUsuarioProyecto
             {
                 Eliminar?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
             }
+            else
+            {
+                MessageBox.Show("Se debe seleccionar el checkBox para eliminar ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

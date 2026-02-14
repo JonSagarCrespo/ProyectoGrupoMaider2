@@ -50,7 +50,14 @@ namespace controlUsuarioPrestamos
 
         private void btDevolucion_Click(object sender, EventArgs e)
         {
-            devolucion?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
+            if (ckSeleccionar.Checked) { 
+                devolucion?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
+            }
+            else
+            {
+                MessageBox.Show("Se debe seleccionar el checkBox para eliminar ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+             
         }
     }
 }

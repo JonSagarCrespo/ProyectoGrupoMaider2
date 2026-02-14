@@ -56,12 +56,6 @@ namespace ProyectoBiblioteca.Vista
 
         }
 
-        private void btLimpiar_Click_1(object sender, EventArgs e)
-        {
-            tbNombre.Text = "";
-            tbApe1.Text = "";
-            tbApe2.Text = "";
-            tbTelefono.Text = "";
-        }
+   
     }
 }
