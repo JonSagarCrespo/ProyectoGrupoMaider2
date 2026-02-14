@@ -76,9 +76,11 @@
             this.cbbUsuario.Name = "cbbUsuario";
             this.cbbUsuario.Size = new System.Drawing.Size(384, 24);
             this.cbbUsuario.TabIndex = 4;
+            this.cbbUsuario.Text = "Seleccionar Usuario";
             // 
             // tlpFecha_Fin
             // 
+            this.tlpFecha_Fin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
             this.tlpFecha_Fin.ColumnCount = 2;
             this.tlpFecha_Fin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.79696F));
             this.tlpFecha_Fin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.20305F));
@@ -96,14 +98,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(4, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 32);
+            this.label2.Size = new System.Drawing.Size(68, 41);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha Fin: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpFin
             // 
@@ -116,6 +120,7 @@
             // 
             // tlpFecha_Inicio
             // 
+            this.tlpFecha_Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
             this.tlpFecha_Inicio.ColumnCount = 2;
             this.tlpFecha_Inicio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.05076F));
             this.tlpFecha_Inicio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.94924F));
@@ -133,11 +138,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 32);
+            this.label1.Size = new System.Drawing.Size(68, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Inicio: ";
             // 
@@ -159,18 +166,24 @@
             this.cbLibro.Name = "cbLibro";
             this.cbLibro.Size = new System.Drawing.Size(384, 24);
             this.cbLibro.TabIndex = 3;
+            this.cbLibro.Text = "Seleccionar Libro";
             // 
             // btAgregarPrestamo
             // 
+            this.btAgregarPrestamo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tlpPrincipalPrestamo.SetColumnSpan(this.btAgregarPrestamo, 2);
-            this.btAgregarPrestamo.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.btAgregarPrestamo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btAgregarPrestamo.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btAgregarPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAgregarPrestamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAgregarPrestamo.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btAgregarPrestamo.Location = new System.Drawing.Point(4, 85);
             this.btAgregarPrestamo.Margin = new System.Windows.Forms.Padding(4);
             this.btAgregarPrestamo.Name = "btAgregarPrestamo";
             this.btAgregarPrestamo.Size = new System.Drawing.Size(776, 28);
             this.btAgregarPrestamo.TabIndex = 1;
             this.btAgregarPrestamo.Text = "Crear Prestamo";
-            this.btAgregarPrestamo.UseVisualStyleBackColor = true;
+            this.btAgregarPrestamo.UseVisualStyleBackColor = false;
             this.btAgregarPrestamo.Click += new System.EventHandler(this.btAgregarPrestamo_Click);
             // 
             // tlpPrestamo

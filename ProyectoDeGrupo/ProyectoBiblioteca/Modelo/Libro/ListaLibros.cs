@@ -68,8 +68,8 @@ namespace ProyectoBiblioteca.Modelo.Libro
                 else
                 {
                     cmd = new SQLiteCommand("SELECT * FROM Libros WHERE Titulo LIKE @Titulo OR Escritor LIKE @Escritor");
-                    cmd.Parameters.AddWithValue("@Titulo", texto);
-                    cmd.Parameters.AddWithValue("@Escritor", texto);
+                    cmd.Parameters.AddWithValue("@Titulo", "%" + texto + "%");
+                    cmd.Parameters.AddWithValue("@Escritor", "%" + texto + "%");
                 }
                 datos = Conexion.GetDataTable(ruta, cmd);
             }

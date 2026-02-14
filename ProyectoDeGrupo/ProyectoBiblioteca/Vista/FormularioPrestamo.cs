@@ -34,10 +34,8 @@ namespace ProyectoBiblioteca.Vista
             {
                 UserControl1 control = new UserControl1();
 
-
-
                 control.Id = (int)row.Field<long>("id");
-
+          
                 control.Nombre = row.Field<string>("Nombre");
                 control.libro = row.Field<string>("Titulo");
 
@@ -59,16 +57,14 @@ namespace ProyectoBiblioteca.Vista
         }
 
         private void Control_devolucion(object sender, UserControl1.ClickarBotonSeleccionarEventArgs e)
+
         {
-
-
+            controladorPrestamo.EliminarPrestamo(e.Id);
+         MessageBox.Show($"Prestamo eliminado correctamente{e.Id}");
+            Cargar(controladorPrestamo.CargarDatosPrestamos());
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
 
 
         private void FormularioPrestamo_Load_1(object sender, EventArgs e)
@@ -107,7 +103,7 @@ namespace ProyectoBiblioteca.Vista
             cbLibro.SelectedIndex = -1;
 
             cbbUsuario.DataSource = dtUsuarios;
-
+           
             cbbUsuario.DisplayMember = "Nombre_completo";   // lo que se ve
             cbbUsuario.ValueMember = "ID";  // lo que se guarda
             cbbUsuario.SelectedIndex = -1;
@@ -165,5 +161,7 @@ namespace ProyectoBiblioteca.Vista
             }
 
         }
+
+  
     }
 }

@@ -12,20 +12,18 @@ namespace controlUsuarioPrestamos
 
         private void tblpPricipal_Paint(object sender, PaintEventArgs e)
         {
-
         }
-
-        public int Id
+   public int Id
         {
-            get
+            get => id;
+            set
             {
-                if (int.TryParse(lbId.Text, out int result))
-                    return result;
-
-                return 0; // o lanzar excepción personalizada si lo prefieres
+                id = value;
+                lbId.Text = value.ToString();
             }
-            set => lbId.Text = value.ToString();
         }
+
+
 
         public string Nombre
         {
@@ -38,7 +36,7 @@ namespace controlUsuarioPrestamos
             set => lbLibro.Text = value;
         }
 
-        private int ID;
+        private int id;
         public class ClickarBotonSeleccionarEventArgs : EventArgs
         {
             public int Id { get; }
@@ -52,7 +50,7 @@ namespace controlUsuarioPrestamos
 
         private void btDevolucion_Click(object sender, EventArgs e)
         {
-            devolucion?.Invoke(this, new ClickarBotonSeleccionarEventArgs(ID));
+            devolucion?.Invoke(this, new ClickarBotonSeleccionarEventArgs(id));
         }
     }
 }

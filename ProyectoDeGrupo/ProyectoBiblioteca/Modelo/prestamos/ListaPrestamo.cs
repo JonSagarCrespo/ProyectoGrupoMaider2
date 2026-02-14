@@ -1,5 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace ProyectoBiblioteca.Modelo.Prestamos
 {
@@ -60,19 +62,34 @@ namespace ProyectoBiblioteca.Modelo.Prestamos
         }
 
 
-        public void EliminarPrestamo(int idPrestmo, int idLibro)
-        {
-            string sql = "DELETE FROM Libros WHERE ID = @idPrestamo";
+        public void EliminarPrestamo(int idPrestamo)
+        { 
+           int idLibro = 0;
+
+            string sql = @"SELECT ID_Libro 
+                   FROM Prestamos 
+                   WHERE ID = @idPrestamo";
+
             SQLiteCommand cmd = new SQLiteCommand(sql);
+            cmd.Parameters.AddWithValue("@idPrestamo", idPrestamo);
+            Conexion.Ejecuta(ruta, cmd);
+  
+
+           
+            sql = "DELETE FROM Prestamos WHERE ID = @idPrestamo";
+            cmd = new SQLiteCommand(sql);
+            cmd.Parameters.AddWithValue("@idPrestamo", idPrestamo);
 
             Conexion.Ejecuta(ruta, cmd);
 
             sql = "UPDATE Libros SET Disponible = 1 WHERE ID = @idLibro";
             cmd = new SQLiteCommand(sql);
             cmd.Parameters.AddWithValue("@idLibro", idLibro);
+
             Conexion.Ejecuta(ruta, cmd);
-
-
         }
+
+
+
     }
 }

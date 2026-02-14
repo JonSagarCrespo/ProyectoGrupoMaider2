@@ -26,8 +26,12 @@ namespace ProyectoBiblioteca.Controlador
 
             if (telefonoTexto.Length < 9)
                 throw new Exception("formato de telefono no valido");
+            if (telefonoTexto.Trim().Length == 0)
+            {
+                throw new Exception("Falta el telefono ");
+            }
 
-            listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
+                listaUsuarios.Agregar(nombre, Apellido1, Apellido2, telefono);
         }
 
         public bool eleminarUsuario(int id)
@@ -73,21 +77,11 @@ namespace ProyectoBiblioteca.Controlador
 
             if (Apellido1.Trim().Length == 0)
                 throw new Exception("Falta el primer Apellido");
-         
-
-            if (telefonoTexto.Length == 9 && telefonoTexto.All(char.IsDigit))
-            {
-                int telefonoNumero = int.Parse(telefonoTexto);
-                throw new Exception("Teléfono válido");
-            }
-            else
-            {
-                throw new Exception("Teléfono no válido");
-            }
 
             if (telefonoTexto.Length < 9)
                 throw new Exception("formato de telefono no valido");
-
+            if (telefonoTexto.Trim().Length == 0)
+                throw new Exception("Falta el telefono " );
 
 
 
@@ -193,14 +187,11 @@ namespace ProyectoBiblioteca.Controlador
 
         // CONTROLADOR PRESTAMO 
 
-        public void EliminarPrestamo(int idPrestamo, int idLibro)
+        public void EliminarPrestamo(int idPrestamo)
         {
-            if (idPrestamo <= 0)
-                throw new Exception("Falta seleccionar un prestamo " + Environment.NewLine);
-            if (idLibro <= 0)
-                throw new Exception("Falta seleccionar un libro " + Environment.NewLine);
 
-            listaPrestamos.EliminarPrestamo(idPrestamo, idLibro);
+            listaPrestamos.EliminarPrestamo(idPrestamo);
+      
         }
 
         public void InsertarPrestamos(int idLibro, int idUsuario, string fecha_Inicio, string fecha_Fin)
