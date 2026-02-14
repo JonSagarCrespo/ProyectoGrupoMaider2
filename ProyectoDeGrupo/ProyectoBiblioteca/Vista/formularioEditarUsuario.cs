@@ -19,14 +19,9 @@ namespace ProyectoBiblioteca.Vista
             controladorEditarUsuario = new controlador();
         }
 
-        private void formularioEditarUsuario_Load(object sender, EventArgs e)
-        {
 
-            // tbApe1.Text = 
 
-        }
-
-        private void btEditar_Click(object sender, EventArgs e)
+        private void btEditar_Click_1(object sender, EventArgs e)
         {
             int eId = int.Parse(lEid.Text);
             string nom = tbNombre.Text;
@@ -44,18 +39,11 @@ namespace ProyectoBiblioteca.Vista
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
         }
 
-        private void btCancelar_Click_1(object sender, EventArgs e)
+        private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
-
-   
     }
 }

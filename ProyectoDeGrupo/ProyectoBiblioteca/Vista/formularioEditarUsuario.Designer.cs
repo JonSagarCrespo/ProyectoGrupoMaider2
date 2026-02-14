@@ -181,6 +181,7 @@
             this.btEditar.TabIndex = 10;
             this.btEditar.Text = " Editar";
             this.btEditar.UseVisualStyleBackColor = false;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click_1);
             // 
             // btCancelar
             // 
@@ -194,6 +195,7 @@
             this.btCancelar.TabIndex = 14;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // tableLayoutPanel2
             // 
