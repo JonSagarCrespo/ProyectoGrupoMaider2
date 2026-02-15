@@ -39,17 +39,17 @@
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.tlpBotones = new System.Windows.Forms.TableLayoutPanel();
+            this.btLimpiar = new System.Windows.Forms.Button();
             this.tlpPrincipal.SuspendLayout();
-            this.tlpBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpPrincipal
             // 
             this.tlpPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tlpPrincipal.ColumnCount = 2;
+            this.tlpPrincipal.ColumnCount = 3;
             this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpPrincipal.Controls.Add(this.tbApe1, 1, 2);
             this.tlpPrincipal.Controls.Add(this.lNombre, 0, 1);
             this.tlpPrincipal.Controls.Add(this.lApe1, 0, 2);
@@ -58,7 +58,9 @@
             this.tlpPrincipal.Controls.Add(this.tbNombre, 1, 1);
             this.tlpPrincipal.Controls.Add(this.tbApe2, 1, 3);
             this.tlpPrincipal.Controls.Add(this.tbTelefono, 1, 4);
-            this.tlpPrincipal.Controls.Add(this.tlpBotones, 0, 6);
+            this.tlpPrincipal.Controls.Add(this.btGuardar, 1, 6);
+            this.tlpPrincipal.Controls.Add(this.btLimpiar, 2, 6);
+            this.tlpPrincipal.Controls.Add(this.btCancelar, 0, 6);
             this.tlpPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tlpPrincipal.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
@@ -74,16 +76,17 @@
             this.tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpPrincipal.Size = new System.Drawing.Size(800, 450);
+            this.tlpPrincipal.Size = new System.Drawing.Size(600, 366);
             this.tlpPrincipal.TabIndex = 5;
             // 
             // tbApe1
             // 
+            this.tlpPrincipal.SetColumnSpan(this.tbApe1, 2);
             this.tbApe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbApe1.Location = new System.Drawing.Point(273, 187);
+            this.tbApe1.Location = new System.Drawing.Point(159, 145);
             this.tbApe1.Margin = new System.Windows.Forms.Padding(2);
             this.tbApe1.Name = "tbApe1";
-            this.tbApe1.Size = new System.Drawing.Size(511, 20);
+            this.tbApe1.Size = new System.Drawing.Size(425, 20);
             this.tbApe1.TabIndex = 9;
             // 
             // lNombre
@@ -92,10 +95,10 @@
             this.lNombre.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNombre.Location = new System.Drawing.Point(16, 161);
+            this.lNombre.Location = new System.Drawing.Point(16, 119);
             this.lNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lNombre.Name = "lNombre";
-            this.lNombre.Size = new System.Drawing.Size(253, 24);
+            this.lNombre.Size = new System.Drawing.Size(139, 24);
             this.lNombre.TabIndex = 1;
             this.lNombre.Text = "Nombre";
             this.lNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,10 +109,10 @@
             this.lApe1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lApe1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lApe1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lApe1.Location = new System.Drawing.Point(16, 185);
+            this.lApe1.Location = new System.Drawing.Point(16, 143);
             this.lApe1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lApe1.Name = "lApe1";
-            this.lApe1.Size = new System.Drawing.Size(253, 24);
+            this.lApe1.Size = new System.Drawing.Size(139, 24);
             this.lApe1.TabIndex = 2;
             this.lApe1.Text = "1ª Apellido";
             this.lApe1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,10 +123,10 @@
             this.lApe2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lApe2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lApe2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lApe2.Location = new System.Drawing.Point(16, 209);
+            this.lApe2.Location = new System.Drawing.Point(16, 167);
             this.lApe2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lApe2.Name = "lApe2";
-            this.lApe2.Size = new System.Drawing.Size(253, 24);
+            this.lApe2.Size = new System.Drawing.Size(139, 24);
             this.lApe2.TabIndex = 3;
             this.lApe2.Text = "2ª Apellido";
             this.lApe2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,39 +137,43 @@
             this.lTelefono.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lTelefono.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTelefono.Location = new System.Drawing.Point(16, 233);
+            this.lTelefono.Location = new System.Drawing.Point(16, 191);
             this.lTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lTelefono.Name = "lTelefono";
-            this.lTelefono.Size = new System.Drawing.Size(253, 24);
+            this.lTelefono.Size = new System.Drawing.Size(139, 24);
             this.lTelefono.TabIndex = 4;
             this.lTelefono.Text = "Telefono";
             this.lTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbNombre
             // 
+            this.tlpPrincipal.SetColumnSpan(this.tbNombre, 2);
             this.tbNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbNombre.Location = new System.Drawing.Point(273, 163);
+            this.tbNombre.Location = new System.Drawing.Point(159, 121);
             this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(511, 20);
+            this.tbNombre.Size = new System.Drawing.Size(425, 20);
             this.tbNombre.TabIndex = 6;
+            this.tbNombre.Text = "hola";
             // 
             // tbApe2
             // 
+            this.tlpPrincipal.SetColumnSpan(this.tbApe2, 2);
             this.tbApe2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbApe2.Location = new System.Drawing.Point(273, 211);
+            this.tbApe2.Location = new System.Drawing.Point(159, 169);
             this.tbApe2.Margin = new System.Windows.Forms.Padding(2);
             this.tbApe2.Name = "tbApe2";
-            this.tbApe2.Size = new System.Drawing.Size(511, 20);
+            this.tbApe2.Size = new System.Drawing.Size(425, 20);
             this.tbApe2.TabIndex = 7;
             // 
             // tbTelefono
             // 
+            this.tlpPrincipal.SetColumnSpan(this.tbTelefono, 2);
             this.tbTelefono.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbTelefono.Location = new System.Drawing.Point(273, 235);
+            this.tbTelefono.Location = new System.Drawing.Point(159, 193);
             this.tbTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.tbTelefono.Name = "tbTelefono";
-            this.tbTelefono.Size = new System.Drawing.Size(511, 20);
+            this.tbTelefono.Size = new System.Drawing.Size(425, 20);
             this.tbTelefono.TabIndex = 8;
             // 
             // btGuardar
@@ -175,10 +182,10 @@
             this.btGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btGuardar.Location = new System.Drawing.Point(385, 2);
+            this.btGuardar.Location = new System.Drawing.Point(159, 217);
             this.btGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(379, 22);
+            this.btGuardar.Size = new System.Drawing.Size(282, 28);
             this.btGuardar.TabIndex = 10;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
@@ -187,46 +194,42 @@
             // btCancelar
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btCancelar.Location = new System.Drawing.Point(2, 2);
+            this.btCancelar.Location = new System.Drawing.Point(16, 217);
             this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(379, 22);
+            this.btCancelar.Size = new System.Drawing.Size(132, 28);
             this.btCancelar.TabIndex = 14;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // tlpBotones
+            // btLimpiar
             // 
-            this.tlpBotones.ColumnCount = 2;
-            this.tlpPrincipal.SetColumnSpan(this.tlpBotones, 2);
-            this.tlpBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpBotones.Controls.Add(this.btCancelar, 0, 0);
-            this.tlpBotones.Controls.Add(this.btGuardar, 1, 0);
-            this.tlpBotones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBotones.Location = new System.Drawing.Point(17, 260);
-            this.tlpBotones.Name = "tlpBotones";
-            this.tlpBotones.RowCount = 1;
-            this.tlpBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpBotones.Size = new System.Drawing.Size(766, 26);
-            this.tlpBotones.TabIndex = 15;
+            this.btLimpiar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btLimpiar.Location = new System.Drawing.Point(445, 217);
+            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btLimpiar.Name = "btLimpiar";
+            this.btLimpiar.Size = new System.Drawing.Size(132, 28);
+            this.btLimpiar.TabIndex = 13;
+            this.btLimpiar.Text = "Limpiar";
+            this.btLimpiar.UseVisualStyleBackColor = false;
+            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
             // 
             // FormularioAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tlpPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioAgregarUsuario";
             this.Text = "FormularioAgregarUsuario";
             this.tlpPrincipal.ResumeLayout(false);
             this.tlpPrincipal.PerformLayout();
-            this.tlpBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,6 +247,6 @@
         private System.Windows.Forms.TextBox tbTelefono;
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.TableLayoutPanel tlpBotones;
+        private System.Windows.Forms.Button btLimpiar;
     }
 }
