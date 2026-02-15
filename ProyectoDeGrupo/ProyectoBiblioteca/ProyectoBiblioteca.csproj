@@ -111,6 +111,11 @@
     <Compile Include="Modelo\Usuario\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Iconos\editar-18.png" />
+    <None Include="Iconos\cancelar-18.png" />
+    <None Include="Iconos\cancelar.png" />
+    <None Include="Iconos\limpiar.png" />
+    <None Include="Iconos\icons8-disco-20.png" />
     <EmbeddedResource Include="Vista\formularioAgregarLibro.resx">
       <DependentUpon>formularioAgregarLibro.cs</DependentUpon>
     </EmbeddedResource>

@@ -37,11 +37,11 @@
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbApe2 = new System.Windows.Forms.TextBox();
             this.tbTelefono = new System.Windows.Forms.TextBox();
-            this.btEditar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.lEid = new System.Windows.Forms.Label();
+            this.btEditar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.tlpPricipal.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             // 
             this.tbApe1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbApe1.Location = new System.Drawing.Point(206, 145);
-            this.tbApe1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbApe1.Margin = new System.Windows.Forms.Padding(2);
             this.tbApe1.Name = "tbApe1";
             this.tbApe1.Size = new System.Drawing.Size(378, 20);
             this.tbApe1.TabIndex = 9;
@@ -149,7 +149,7 @@
             // 
             this.tbNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbNombre.Location = new System.Drawing.Point(206, 121);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(378, 20);
             this.tbNombre.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             this.tbApe2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbApe2.Location = new System.Drawing.Point(206, 169);
-            this.tbApe2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbApe2.Margin = new System.Windows.Forms.Padding(2);
             this.tbApe2.Name = "tbApe2";
             this.tbApe2.Size = new System.Drawing.Size(378, 20);
             this.tbApe2.TabIndex = 7;
@@ -167,39 +167,10 @@
             // 
             this.tbTelefono.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono.Location = new System.Drawing.Point(206, 193);
-            this.tbTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(378, 20);
             this.tbTelefono.TabIndex = 8;
-            // 
-            // btEditar
-            // 
-            this.btEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btEditar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btEditar.Location = new System.Drawing.Point(206, 217);
-            this.btEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(378, 28);
-            this.btEditar.TabIndex = 10;
-            this.btEditar.Text = " Editar";
-            this.btEditar.UseVisualStyleBackColor = false;
-            this.btEditar.Click += new System.EventHandler(this.btEditar_Click_1);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btCancelar.Location = new System.Drawing.Point(16, 217);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(132, 28);
-            this.btCancelar.TabIndex = 14;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = false;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -244,6 +215,40 @@
             this.lEid.TabIndex = 3;
             this.lEid.Text = "---";
             this.lEid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btEditar
+            // 
+            this.btEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btEditar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEditar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btEditar.Image = global::ProyectoBiblioteca.Properties.Resources.editar_18;
+            this.btEditar.Location = new System.Drawing.Point(206, 217);
+            this.btEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btEditar.Name = "btEditar";
+            this.btEditar.Size = new System.Drawing.Size(378, 28);
+            this.btEditar.TabIndex = 10;
+            this.btEditar.Text = " Editar";
+            this.btEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btEditar.UseVisualStyleBackColor = false;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click_1);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btCancelar.Image = global::ProyectoBiblioteca.Properties.Resources.cancelar_18;
+            this.btCancelar.Location = new System.Drawing.Point(16, 217);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(132, 28);
+            this.btCancelar.TabIndex = 14;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // formularioEditarUsuario
             // 

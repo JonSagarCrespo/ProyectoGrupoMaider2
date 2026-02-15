@@ -38,8 +38,8 @@
             this.tbApe2 = new System.Windows.Forms.TextBox();
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btGuardar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
             this.btLimpiar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.tlpPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,7 +154,6 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(425, 20);
             this.tbNombre.TabIndex = 6;
-            this.tbNombre.Text = "hola";
             // 
             // tbApe2
             // 
@@ -182,42 +181,51 @@
             this.btGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btGuardar.Image = global::ProyectoBiblioteca.Properties.Resources.icons8_disco_20;
             this.btGuardar.Location = new System.Drawing.Point(159, 217);
             this.btGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(282, 28);
             this.btGuardar.TabIndex = 10;
             this.btGuardar.Text = "Guardar";
+            this.btGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btCancelar.Location = new System.Drawing.Point(16, 217);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(132, 28);
-            this.btCancelar.TabIndex = 14;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = false;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btLimpiar
             // 
             this.btLimpiar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btLimpiar.Image = global::ProyectoBiblioteca.Properties.Resources.limpiar;
             this.btLimpiar.Location = new System.Drawing.Point(445, 217);
             this.btLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(132, 28);
             this.btLimpiar.TabIndex = 13;
             this.btLimpiar.Text = "Limpiar";
+            this.btLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btLimpiar.UseVisualStyleBackColor = false;
             this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btCancelar.Image = global::ProyectoBiblioteca.Properties.Resources.cancelar_18;
+            this.btCancelar.Location = new System.Drawing.Point(16, 217);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(132, 28);
+            this.btCancelar.TabIndex = 14;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // FormularioAgregarUsuario
             // 
