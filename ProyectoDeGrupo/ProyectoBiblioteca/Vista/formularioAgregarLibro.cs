@@ -18,10 +18,7 @@ namespace ProyectoBiblioteca.Vista
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
         private void limpiarCampos()
         {
             tbTitulo.Text = "";
@@ -69,9 +66,5 @@ namespace ProyectoBiblioteca.Vista
             this.Close();
         }
 
-        private void ckDisponible_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

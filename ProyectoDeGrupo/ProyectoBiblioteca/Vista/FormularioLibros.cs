@@ -60,15 +60,17 @@ namespace ProyectoBiblioteca
             tableLayoutPanelLibros.Padding = new Padding(6);
         }
 
+        
+
         private void Control_Editar(object sender, ControlUsuarioProyecto.ControlUsuario.ClickarBotonSeleccionarEventArgs e)
         {
+
+            
             int sacarID = e.Id;
-            MessageBox.Show($"{sacarID}");
-
-
 
             formularioEditarLibro form = new formularioEditarLibro();
             form.controladorEditarLibro = this.controladorLibro;
+           
 
             form.lEidLibro.Text = controladorLibro.MuestraLib(sacarID).Id.ToString();
             form.tbTitulo.Text = controladorLibro.MuestraLib(sacarID).Titulo.ToString();

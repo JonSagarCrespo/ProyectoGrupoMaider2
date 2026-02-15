@@ -42,5 +42,6 @@ namespace ProyectoBiblioteca.Vista
             tbTelefono.Text = "";
         }
 
+        
     }
 }

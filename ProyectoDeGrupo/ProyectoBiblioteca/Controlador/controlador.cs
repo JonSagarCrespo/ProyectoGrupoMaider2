@@ -158,7 +158,7 @@ namespace ProyectoBiblioteca.Controlador
             if (escritor.Trim().Length == 0)
                 throw new Exception("Falta el escritor" + Environment.NewLine);
             if (anoTexto.Length < 4)
-                throw new Exception(" ERROR Año debe ser: 0000 , Formato introducido no valido " + Environment.NewLine);
+                throw new Exception(" ERROR Año debe ser D.C 1000, Formato introducido no valido " + Environment.NewLine);
             if (anoTexto.Trim().Length == 0)
                 throw new Exception("Falta el año de edicion " + Environment.NewLine);
 
