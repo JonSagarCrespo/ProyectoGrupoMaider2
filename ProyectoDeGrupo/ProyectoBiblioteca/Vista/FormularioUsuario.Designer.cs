@@ -50,7 +50,7 @@
             this.tlpPrincipalUsuarios.Controls.Add(this.panelUsuarios, 0, 2);
             this.tlpPrincipalUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPrincipalUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.tlpPrincipalUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPrincipalUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPrincipalUsuarios.Name = "tlpPrincipalUsuarios";
             this.tlpPrincipalUsuarios.RowCount = 3;
             this.tlpPrincipalUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
@@ -71,7 +71,7 @@
             this.tlpEncabezadoUsuarios.Controls.Add(this.btBuscar, 2, 0);
             this.tlpEncabezadoUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpEncabezadoUsuarios.Location = new System.Drawing.Point(2, 2);
-            this.tlpEncabezadoUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpEncabezadoUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEncabezadoUsuarios.Name = "tlpEncabezadoUsuarios";
             this.tlpEncabezadoUsuarios.RowCount = 1;
             this.tlpEncabezadoUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -110,11 +110,12 @@
             this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btBuscar.AutoSize = true;
             this.btBuscar.BackColor = System.Drawing.Color.IndianRed;
-            this.btBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btBuscar.Location = new System.Drawing.Point(413, 10);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(173, 30);
             this.btBuscar.TabIndex = 2;
@@ -131,7 +132,7 @@
             this.tlpSecundarioUsuarios.Controls.Add(this.btAgregar, 2, 0);
             this.tlpSecundarioUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSecundarioUsuarios.Location = new System.Drawing.Point(2, 50);
-            this.tlpSecundarioUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSecundarioUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSecundarioUsuarios.Name = "tlpSecundarioUsuarios";
             this.tlpSecundarioUsuarios.RowCount = 1;
             this.tlpSecundarioUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -140,12 +141,13 @@
             // 
             // btAgregar
             // 
+            this.btAgregar.AutoSize = true;
             this.btAgregar.BackColor = System.Drawing.Color.Turquoise;
             this.btAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAgregar.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btAgregar.Location = new System.Drawing.Point(406, 10);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(10);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btAgregar.Size = new System.Drawing.Size(180, 40);
@@ -173,13 +175,14 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tlpPrincipalUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormularioUsuario";
             this.Text = "Formulario Usuario";
             this.tlpPrincipalUsuarios.ResumeLayout(false);
             this.tlpEncabezadoUsuarios.ResumeLayout(false);
             this.tlpEncabezadoUsuarios.PerformLayout();
             this.tlpSecundarioUsuarios.ResumeLayout(false);
+            this.tlpSecundarioUsuarios.PerformLayout();
             this.ResumeLayout(false);
 
         }

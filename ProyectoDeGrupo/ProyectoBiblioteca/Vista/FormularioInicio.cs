@@ -14,11 +14,6 @@ namespace ProyectoBiblioteca
             InitializeComponent();
         }
 
-        private void formularioPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void InsertarFormulario(Form formulario)
         {
 
@@ -56,11 +51,6 @@ namespace ProyectoBiblioteca
             form.controladorLibro = this.controladorPricipal; // Se pasa el controlador principal al formulario Libros para que ambos trabajen con la misma lógica y datos.
             InsertarFormulario(form);
             tlpInicio.Hide(); 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void menPrestamos_Click(object sender, EventArgs e)

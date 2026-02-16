@@ -37,11 +37,11 @@
             this.tbTitulo = new System.Windows.Forms.TextBox();
             this.tbAno_edicion = new System.Windows.Forms.TextBox();
             this.tbSinopsis = new System.Windows.Forms.TextBox();
-            this.lbDisponible = new System.Windows.Forms.Label();
-            this.ckDisponible = new System.Windows.Forms.CheckBox();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.lbDisponible = new System.Windows.Forms.Label();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.ckDisponible = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,29 +178,6 @@
             this.tbSinopsis.Size = new System.Drawing.Size(425, 20);
             this.tbSinopsis.TabIndex = 8;
             // 
-            // lbDisponible
-            // 
-            this.lbDisponible.AutoSize = true;
-            this.lbDisponible.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDisponible.Location = new System.Drawing.Point(16, 206);
-            this.lbDisponible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbDisponible.Name = "lbDisponible";
-            this.lbDisponible.Size = new System.Drawing.Size(139, 18);
-            this.lbDisponible.TabIndex = 12;
-            this.lbDisponible.Text = "dispobible";
-            // 
-            // ckDisponible
-            // 
-            this.ckDisponible.AutoSize = true;
-            this.ckDisponible.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckDisponible.Location = new System.Drawing.Point(159, 208);
-            this.ckDisponible.Margin = new System.Windows.Forms.Padding(2);
-            this.ckDisponible.Name = "ckDisponible";
-            this.ckDisponible.Size = new System.Drawing.Size(282, 14);
-            this.ckDisponible.TabIndex = 15;
-            this.ckDisponible.UseVisualStyleBackColor = true;
-            // 
             // btGuardar
             // 
             this.btGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -218,6 +195,18 @@
             this.btGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
+            // 
+            // lbDisponible
+            // 
+            this.lbDisponible.AutoSize = true;
+            this.lbDisponible.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDisponible.Location = new System.Drawing.Point(16, 206);
+            this.lbDisponible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDisponible.Name = "lbDisponible";
+            this.lbDisponible.Size = new System.Drawing.Size(139, 18);
+            this.lbDisponible.TabIndex = 12;
+            this.lbDisponible.Text = "dispobible";
             // 
             // btLimpiar
             // 
@@ -253,6 +242,17 @@
             this.btCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // ckDisponible
+            // 
+            this.ckDisponible.AutoSize = true;
+            this.ckDisponible.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckDisponible.Location = new System.Drawing.Point(159, 208);
+            this.ckDisponible.Margin = new System.Windows.Forms.Padding(2);
+            this.ckDisponible.Name = "ckDisponible";
+            this.ckDisponible.Size = new System.Drawing.Size(282, 14);
+            this.ckDisponible.TabIndex = 15;
+            this.ckDisponible.UseVisualStyleBackColor = true;
             // 
             // formularioAgregarLibro
             // 

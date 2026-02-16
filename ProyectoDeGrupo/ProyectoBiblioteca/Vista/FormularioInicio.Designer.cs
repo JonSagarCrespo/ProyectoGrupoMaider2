@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.msPrincipal = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.tlpInicio = new System.Windows.Forms.TableLayoutPanel();
             this.smiInsertar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menLibros = new System.Windows.Forms.ToolStripMenuItem();
             this.menPrestamos = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.tlpInicio = new System.Windows.Forms.TableLayoutPanel();
             this.msPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -61,35 +61,6 @@
             this.msPrincipal.TabIndex = 1;
             this.msPrincipal.Text = "MenuStrip1";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 68);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // tlpInicio
-            // 
-            this.tlpInicio.BackgroundImage = global::ProyectoBiblioteca.Properties.Resources.Inicio;
-            this.tlpInicio.ColumnCount = 1;
-            this.tlpInicio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpInicio.Location = new System.Drawing.Point(0, 72);
-            this.tlpInicio.Name = "tlpInicio";
-            this.tlpInicio.RowCount = 1;
-            this.tlpInicio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpInicio.Size = new System.Drawing.Size(600, 294);
-            this.tlpInicio.TabIndex = 3;
-            // 
             // smiInsertar
             // 
             this.smiInsertar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -99,6 +70,11 @@
             this.smiInsertar.Size = new System.Drawing.Size(196, 68);
             this.smiInsertar.Text = "Ayuntamiento Vitoria Gasteiz";
             this.smiInsertar.Click += new System.EventHandler(this.smiInsertar_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 68);
             // 
             // menUsuarios
             // 
@@ -132,10 +108,36 @@
             this.menPrestamos.Text = "Prestamos";
             this.menPrestamos.Click += new System.EventHandler(this.menPrestamos_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // tlpInicio
+            // 
+            this.tlpInicio.BackgroundImage = global::ProyectoBiblioteca.Properties.Resources.Inicio;
+            this.tlpInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tlpInicio.ColumnCount = 1;
+            this.tlpInicio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpInicio.Location = new System.Drawing.Point(0, 72);
+            this.tlpInicio.Name = "tlpInicio";
+            this.tlpInicio.RowCount = 1;
+            this.tlpInicio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpInicio.Size = new System.Drawing.Size(600, 294);
+            this.tlpInicio.TabIndex = 3;
+            // 
             // formularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tlpInicio);
@@ -143,10 +145,9 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formularioPrincipal";
             this.Text = "Pagina Inicio";
-            this.Load += new System.EventHandler(this.formularioPrincipal_Load);
             this.msPrincipal.ResumeLayout(false);
             this.msPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
