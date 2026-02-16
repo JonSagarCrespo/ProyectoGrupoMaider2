@@ -111,6 +111,7 @@
     <Compile Include="Modelo\Usuario\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Iconos\Inicio.png" />
     <None Include="Iconos\editar-18.png" />
     <None Include="Iconos\cancelar-18.png" />
     <None Include="Iconos\cancelar.png" />

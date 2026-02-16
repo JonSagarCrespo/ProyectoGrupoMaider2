@@ -57,24 +57,22 @@
             this.tlpPrincipalPrestamo.Controls.Add(this.tlpPrestamo, 0, 3);
             this.tlpPrincipalPrestamo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPrincipalPrestamo.Location = new System.Drawing.Point(0, 0);
-            this.tlpPrincipalPrestamo.Margin = new System.Windows.Forms.Padding(4);
             this.tlpPrincipalPrestamo.Name = "tlpPrincipalPrestamo";
             this.tlpPrincipalPrestamo.RowCount = 4;
             this.tlpPrincipalPrestamo.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpPrincipalPrestamo.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpPrincipalPrestamo.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpPrincipalPrestamo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPrincipalPrestamo.Size = new System.Drawing.Size(784, 492);
+            this.tlpPrincipalPrestamo.Size = new System.Drawing.Size(588, 400);
             this.tlpPrincipalPrestamo.TabIndex = 0;
             // 
             // cbbUsuario
             // 
             this.cbbUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbUsuario.FormattingEnabled = true;
-            this.cbbUsuario.Location = new System.Drawing.Point(396, 53);
-            this.cbbUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbUsuario.Location = new System.Drawing.Point(297, 42);
             this.cbbUsuario.Name = "cbbUsuario";
-            this.cbbUsuario.Size = new System.Drawing.Size(384, 24);
+            this.cbbUsuario.Size = new System.Drawing.Size(288, 21);
             this.cbbUsuario.TabIndex = 4;
             this.cbbUsuario.Text = "Seleccionar Usuario";
             this.cbbUsuario.SelectedIndexChanged += new System.EventHandler(this.cbbUsuario_SelectedIndexChanged);
@@ -88,12 +86,11 @@
             this.tlpFecha_Fin.Controls.Add(this.label2, 0, 0);
             this.tlpFecha_Fin.Controls.Add(this.dtpFin, 1, 0);
             this.tlpFecha_Fin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFecha_Fin.Location = new System.Drawing.Point(396, 4);
-            this.tlpFecha_Fin.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpFecha_Fin.Location = new System.Drawing.Point(297, 3);
             this.tlpFecha_Fin.Name = "tlpFecha_Fin";
             this.tlpFecha_Fin.RowCount = 1;
             this.tlpFecha_Fin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpFecha_Fin.Size = new System.Drawing.Size(384, 41);
+            this.tlpFecha_Fin.Size = new System.Drawing.Size(288, 33);
             this.tlpFecha_Fin.TabIndex = 2;
             // 
             // label2
@@ -103,20 +100,18 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(4, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 41);
+            this.label2.Size = new System.Drawing.Size(51, 33);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha Fin: ";
             // 
             // dtpFin
             // 
             this.dtpFin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpFin.Location = new System.Drawing.Point(80, 4);
-            this.dtpFin.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFin.Location = new System.Drawing.Point(60, 3);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(300, 22);
+            this.dtpFin.Size = new System.Drawing.Size(225, 20);
             this.dtpFin.TabIndex = 1;
             // 
             // tlpFecha_Inicio
@@ -128,12 +123,11 @@
             this.tlpFecha_Inicio.Controls.Add(this.label1, 0, 0);
             this.tlpFecha_Inicio.Controls.Add(this.dtpInicio, 1, 0);
             this.tlpFecha_Inicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFecha_Inicio.Location = new System.Drawing.Point(4, 4);
-            this.tlpFecha_Inicio.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpFecha_Inicio.Location = new System.Drawing.Point(3, 3);
             this.tlpFecha_Inicio.Name = "tlpFecha_Inicio";
             this.tlpFecha_Inicio.RowCount = 1;
             this.tlpFecha_Inicio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpFecha_Inicio.Size = new System.Drawing.Size(384, 41);
+            this.tlpFecha_Inicio.Size = new System.Drawing.Size(288, 33);
             this.tlpFecha_Inicio.TabIndex = 0;
             // 
             // label1
@@ -142,30 +136,27 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(4, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 41);
+            this.label1.Size = new System.Drawing.Size(51, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Inicio: ";
             // 
             // dtpInicio
             // 
             this.dtpInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpInicio.Location = new System.Drawing.Point(80, 4);
-            this.dtpInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpInicio.Location = new System.Drawing.Point(60, 3);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(300, 22);
+            this.dtpInicio.Size = new System.Drawing.Size(225, 20);
             this.dtpInicio.TabIndex = 1;
             // 
             // cbLibro
             // 
             this.cbLibro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbLibro.FormattingEnabled = true;
-            this.cbLibro.Location = new System.Drawing.Point(4, 53);
-            this.cbLibro.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLibro.Location = new System.Drawing.Point(3, 42);
             this.cbLibro.Name = "cbLibro";
-            this.cbLibro.Size = new System.Drawing.Size(384, 24);
+            this.cbLibro.Size = new System.Drawing.Size(288, 21);
             this.cbLibro.TabIndex = 3;
             this.cbLibro.Text = "Seleccionar Libro";
             this.cbLibro.SelectedIndexChanged += new System.EventHandler(this.cbLibro_SelectedIndexChanged);
@@ -179,10 +170,9 @@
             this.btAgregarPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAgregarPrestamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAgregarPrestamo.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btAgregarPrestamo.Location = new System.Drawing.Point(4, 85);
-            this.btAgregarPrestamo.Margin = new System.Windows.Forms.Padding(4);
+            this.btAgregarPrestamo.Location = new System.Drawing.Point(3, 69);
             this.btAgregarPrestamo.Name = "btAgregarPrestamo";
-            this.btAgregarPrestamo.Size = new System.Drawing.Size(776, 28);
+            this.btAgregarPrestamo.Size = new System.Drawing.Size(582, 23);
             this.btAgregarPrestamo.TabIndex = 1;
             this.btAgregarPrestamo.Text = "Crear Prestamo";
             this.btAgregarPrestamo.UseVisualStyleBackColor = false;
@@ -194,22 +184,20 @@
             this.tlpPrincipalPrestamo.SetColumnSpan(this.tlpPrestamo, 2);
             this.tlpPrestamo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPrestamo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPrestamo.Location = new System.Drawing.Point(4, 121);
-            this.tlpPrestamo.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpPrestamo.Location = new System.Drawing.Point(3, 98);
             this.tlpPrestamo.Name = "tlpPrestamo";
             this.tlpPrestamo.RowCount = 1;
             this.tlpPrestamo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPrestamo.Size = new System.Drawing.Size(776, 367);
+            this.tlpPrestamo.Size = new System.Drawing.Size(582, 299);
             this.tlpPrestamo.TabIndex = 5;
             // 
             // FormularioPrestamo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 492);
+            this.ClientSize = new System.Drawing.Size(588, 400);
             this.Controls.Add(this.tlpPrincipalPrestamo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormularioPrestamo";
             this.Text = "FormularioPrestamo";
             this.Load += new System.EventHandler(this.FormularioPrestamo_Load_1);

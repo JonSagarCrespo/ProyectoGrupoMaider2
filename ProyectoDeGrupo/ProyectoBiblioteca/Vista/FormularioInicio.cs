@@ -46,7 +46,7 @@ namespace ProyectoBiblioteca
             var form = new FormularioUsuario();
             form.controladorUsuario = this.controladorPricipal;
             InsertarFormulario(form);
-
+            tlpInicio.Hide();
 
         }
 
@@ -55,6 +55,7 @@ namespace ProyectoBiblioteca
             var form = new FormularioLibros();
             form.controladorLibro = this.controladorPricipal; // Se pasa el controlador principal al formulario Libros para que ambos trabajen con la misma lógica y datos.
             InsertarFormulario(form);
+            tlpInicio.Hide(); 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -67,6 +68,13 @@ namespace ProyectoBiblioteca
             var form = new FormularioPrestamo();
             form.controladorPrestamo = this.controladorPricipal;
             InsertarFormulario(form);
+            tlpInicio.Hide();
+
+        }
+
+        private void smiInsertar_Click(object sender, EventArgs e)
+        {
+            tlpInicio.Show();
         }
     }
 }

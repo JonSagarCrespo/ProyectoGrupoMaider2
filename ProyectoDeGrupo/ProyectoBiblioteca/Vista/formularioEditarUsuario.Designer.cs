@@ -246,6 +246,7 @@
             this.btCancelar.Size = new System.Drawing.Size(132, 28);
             this.btCancelar.TabIndex = 14;
             this.btCancelar.Text = "Cancelar";
+            this.btCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
